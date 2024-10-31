@@ -1,0 +1,130 @@
+[2024-10-31 05:18:05 +08:00Z] [INFO] - 开始初始化 node 方法 
+[2024-10-31 05:18:05 +08:00Z] [SUCCESS] - Socket Server is running... 
+[2024-10-31 05:18:06 +08:00Z] [SUCCESS] - WS 服务初始化成功，连接地址：ws://localhost:9000 
+[2024-10-31 05:18:06 +08:00Z] [SUCCESS] - Node Serve is running at http://localhost:5000. 
+[2024-10-31 05:18:06 +08:00Z] [INFO] - 连接数据库成功！ 
+[2024-10-31 05:18:25 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='lixiao'&&password='b73c63bab0d125a1de69c8f270f92e54' 
+[2024-10-31 05:18:25 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 05:18:26 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:18:26 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:18:26 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:18:28 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='lixiao' AND fl.fileid=fs.fileid 
+[2024-10-31 05:18:28 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:18:45 +08:00Z] [INFO] - SELECT * FROM files WHERE state=1 AND  filename='test' AND filetype='markdown' AND filesuffix='md' AND owner='lixiao' 
+[2024-10-31 05:18:45 +08:00Z] [INFO] - INSERT INTO files(fileid,filename,filetype,filesuffix,owner) 
+         VALUES('uNjB6Hj2E1Y17szXzAbNo','test','markdown','md','lixiao') 
+[2024-10-31 05:18:45 +08:00Z] [DEBUG] - [status] 200 [msg] 文件创建成功 
+[2024-10-31 05:18:50 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='lixiao' AND fl.fileid=fs.fileid 
+[2024-10-31 05:18:50 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:18:51 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:18:51 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:18:51 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:19:26 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='lixiao' AND fl.fileid=fs.fileid 
+[2024-10-31 05:19:26 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:19:29 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:19:29 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:19:29 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:19:33 +08:00Z] [INFO] - 用户连接... 
+[2024-10-31 05:19:33 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='RxxZnT1EIVH7OaOwt-M_n' AND OWNER ='lixiao' 
+[2024-10-31 05:19:33 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:19:33 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:19:33 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='RxxZnT1EIVH7OaOwt-M_n' AND files.currenthead=versions.vid 
+[2024-10-31 05:19:33 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:19:33 +08:00Z] [INFO] - 用户加入房间 RxxZnT1EIVH7OaOwt-M_n 
+[2024-10-31 05:19:36 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='RxxZnT1EIVH7OaOwt-M_n' AND OWNER ='lixiao' 
+[2024-10-31 05:19:36 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:19:39 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:19:39 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:19:39 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:19:39 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:26:50 +08:00Z] [INFO] - 开始初始化 node 方法 
+[2024-10-31 05:26:50 +08:00Z] [SUCCESS] - Socket Server is running... 
+[2024-10-31 05:26:50 +08:00Z] [SUCCESS] - WS 服务初始化成功，连接地址：ws://localhost:9000 
+[2024-10-31 05:26:50 +08:00Z] [SUCCESS] - Node Serve is running at http://localhost:5000. 
+[2024-10-31 05:26:50 +08:00Z] [INFO] - 连接数据库成功！ 
+[2024-10-31 05:27:13 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='lixiao'&&password='b73c63bab0d125a1de69c8f270f92e54' 
+[2024-10-31 05:27:13 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 05:27:13 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:27:13 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:27:13 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:27:32 +08:00Z] [DEBUG] - [status] 500 [msg] 参数缺失 
+[2024-10-31 05:28:16 +08:00Z] [INFO] - 用户连接... 
+[2024-10-31 05:28:16 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='uNjB6Hj2E1Y17szXzAbNo' AND OWNER ='lixiao' 
+[2024-10-31 05:28:16 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:28:16 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:28:16 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='uNjB6Hj2E1Y17szXzAbNo' AND files.currenthead=versions.vid 
+[2024-10-31 05:28:16 +08:00Z] [DEBUG] - [status] 6003 [msg] 参数缺失 
+[2024-10-31 05:28:16 +08:00Z] [INFO] - 用户加入房间 uNjB6Hj2E1Y17szXzAbNo 
+[2024-10-31 05:28:33 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='uNjB6Hj2E1Y17szXzAbNo' 
+[2024-10-31 05:28:33 +08:00Z] [INFO] - INSERT INTO versions(vid,fileid,content,lasteditor)VALUES('P5DAVkyUNxEqoD6JHdaJa','uNjB6Hj2E1Y17szXzAbNo','[{"attributes":{"bold":true},"insert":"# test"},{"insert":"\n"},{"attributes":{"italic":true},"insert":"test"},{"insert":"\n\ntes2\n"}]','lixiao') 
+[2024-10-31 05:28:33 +08:00Z] [INFO] - UPDATE files 
+    SET currenthead='P5DAVkyUNxEqoD6JHdaJa' 
+     
+     
+     
+    WHERE fileid='uNjB6Hj2E1Y17szXzAbNo' 
+[2024-10-31 05:28:33 +08:00Z] [DEBUG] - [status] 200 [msg] 文件更新成功 
+[2024-10-31 05:28:35 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:28:35 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:28:35 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:28:35 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:28:36 +08:00Z] [INFO] - 用户加入房间 uNjB6Hj2E1Y17szXzAbNo 
+[2024-10-31 05:28:36 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:28:36 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='uNjB6Hj2E1Y17szXzAbNo' AND OWNER ='lixiao' 
+[2024-10-31 05:28:36 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:28:36 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='uNjB6Hj2E1Y17szXzAbNo' AND files.currenthead=versions.vid 
+[2024-10-31 05:28:36 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:29:36 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:29:36 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:29:36 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:29:36 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:29:38 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='lixiao' AND fl.fileid=fs.fileid 
+[2024-10-31 05:29:38 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:29:41 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='lixiao' AND fl.fileid=fs.fileid 
+[2024-10-31 05:29:41 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:29:43 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:29:43 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:29:43 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:29:44 +08:00Z] [INFO] - 用户连接... 
+[2024-10-31 05:29:44 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:29:44 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='uNjB6Hj2E1Y17szXzAbNo' AND OWNER ='lixiao' 
+[2024-10-31 05:29:44 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:29:44 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='uNjB6Hj2E1Y17szXzAbNo' AND files.currenthead=versions.vid 
+[2024-10-31 05:29:44 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:29:45 +08:00Z] [INFO] - 用户加入房间 uNjB6Hj2E1Y17szXzAbNo 
+[2024-10-31 05:30:01 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:30:01 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:30:01 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:30:01 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:30:16 +08:00Z] [INFO] - 用户加入房间 uNjB6Hj2E1Y17szXzAbNo 
+[2024-10-31 05:30:16 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:30:16 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='uNjB6Hj2E1Y17szXzAbNo' AND OWNER ='lixiao' 
+[2024-10-31 05:30:16 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:30:16 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='uNjB6Hj2E1Y17szXzAbNo' AND files.currenthead=versions.vid 
+[2024-10-31 05:30:16 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:30:23 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:30:23 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:30:23 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:30:23 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:30:31 +08:00Z] [INFO] - 用户加入房间 RxxZnT1EIVH7OaOwt-M_n 
+[2024-10-31 05:30:31 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:30:31 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='RxxZnT1EIVH7OaOwt-M_n' AND OWNER ='lixiao' 
+[2024-10-31 05:30:31 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:30:31 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='RxxZnT1EIVH7OaOwt-M_n' AND files.currenthead=versions.vid 
+[2024-10-31 05:30:31 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:30:48 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:30:48 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:30:48 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:30:48 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:30:59 +08:00Z] [INFO] - 用户加入房间 uNjB6Hj2E1Y17szXzAbNo 
+[2024-10-31 05:30:59 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:30:59 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='uNjB6Hj2E1Y17szXzAbNo' AND OWNER ='lixiao' 
+[2024-10-31 05:30:59 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:30:59 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='uNjB6Hj2E1Y17szXzAbNo' AND files.currenthead=versions.vid 
+[2024-10-31 05:30:59 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:31:26 +08:00Z] [WARN] - yjs 用户关闭连接 
