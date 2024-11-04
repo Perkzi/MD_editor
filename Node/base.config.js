@@ -14,7 +14,7 @@ const sql_config = {
   database: "mpoe",
   user: "root",
   //password: "root",
-  password: "1234",
+  password: "kwnz7kwkwsUuHv2NLC3q",
 };
 
 // JWT 加密字符串
