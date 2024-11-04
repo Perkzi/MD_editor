@@ -1,5 +1,5 @@
 // 引入 mysql
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const { sql_config } = require("../base.config.js");
 const { logger } = require("../util");
 

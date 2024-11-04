@@ -39,13 +39,6 @@ const routes = [
         },
         component: () => import("@views/Share/index.vue"),
       },
-      {
-        path: "/home/favor",
-        meta: {
-          title: "我的收藏",
-        },
-        component: () => import("@views/Favor/index.vue"),
-      },
     ],
   },
   {

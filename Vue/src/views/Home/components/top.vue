@@ -1,4 +1,5 @@
 <template>
+  <!-- 使用  @click.stop  时，点击事件在触发该元素的事件处理程序后，不会继续传播到父元素 -->
   <div class="top" @click.stop="hiddenContentMenu">
     <div class="top-left">
       <el-button type="primary" @click.stop="(e) => showContentMenu(e)">
@@ -15,25 +16,8 @@
         <i class="iconfont icon-duqumoban"></i>
         <span>模板</span>
       </el-button>
-
-      <el-button text>
-        <i class="iconfont icon-gongneng"></i>
-        <span>工具箱</span>
-      </el-button>
     </div>
     <div class="top-right">
-      <div class="top-right-vip">
-        <el-link type="danger">
-          <i class="iconfont icon-zuanshi"></i>
-          <span>{{ advertisement }}</span>
-        </el-link>
-      </div>
-      <div class="top-right-message" style="margin-right: 20px">
-        <el-badge :value="''" class="item">
-          <i class="iconfont icon-xiaoxizhongxin"></i>
-        </el-badge>
-      </div>
-
       <div class="top-right-user">
         <dropdown :list="optList" @command="commandhandle">
           <template #content>
@@ -56,9 +40,12 @@
     /> -->
 
     <!-- 右键菜单 -->
+    <!-- 通过  ref  属性，给这个组件一个引用名  contentmenuRef ，这样可以在脚本中通过  this.$refs.contentmenuRef  访问该组件实例 -->
+    <!-- 当 Vue 渲染这个组件时， contentmenuRef  将会被赋值为该组件的实例。  -->
+    <!-- "@component/Contentmenu/index.vue"里emit的create和close -->
     <contentmenu
       v-if="showContentMenuInCurrent"
-      ref="contentmenuRef"
+      ref="contentmenuRef"  
       @create="createHandle"
       @close="close"
     />
@@ -80,13 +67,12 @@ import dropdown from "@el/DropdownPageTop/index.vue";
 import router from "@/router";
 import store from "@/store";
 // import settings from "./components/settings.vue";
-import contentmenu from "@compo/Contentmenu/index.vue";
+import contentmenu from "@compo/Contentmenu/index.vue";  //"@component/Contentmenu/index.vue";?
 // 文件导入
 import { fileImport } from "@/util/FileImport";
 import { ElMessage, ElMessageBox } from "element-plus";
 import { createFile_API } from "@/api/file";
 
-const advertisement = ref("【双十一】超值活动，会员低至0.5元/天！");
 
 let vipuser = ref(true);
 
@@ -140,7 +126,7 @@ const commandhandle = (command) => {
 const toTemplate = () => router.push("/template");
 
 // 菜单Ref
-let contentmenuRef = ref(null);
+let contentmenuRef = ref(null);  /* 通过  ref  创建的变量可以用于存储对 DOM 元素或组件实例的引用 */
 // 是否显示菜单
 let showContentMenuInCurrent = ref(false);
 
@@ -148,7 +134,7 @@ let showContentMenuInCurrent = ref(false);
 const showContentMenu = async (e) => {
   showContentMenuInCurrent.value = true;
   await nextTick();
-  contentmenuRef.value.showContentMenu(e, true);
+  contentmenuRef.value.showContentMenu(e, true);  // component/Contentmenu/index.vue的位置计算函数，显示菜单
 };
 
 const close = () => (showContentMenuInCurrent.value = false);
