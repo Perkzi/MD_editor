@@ -7,7 +7,7 @@ import router from "./router";
 import store from "./store";
 // 引入 socket.io
 import VueSocketIO from "vue-socket.io";
-import { socket_server_url } from "/default.config";
+import { socket_server_url } from "../default.config";
 setTheme("bjl");
 
 /* SocketIOClient.Socket, */

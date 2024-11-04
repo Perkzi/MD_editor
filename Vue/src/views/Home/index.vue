@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <asideVue :activeMenu="activeMenu" />
+    <asideVue :activeMenu="activeMenu" />  <!-- 点击边栏修改router -->
     <div class="home-main">
       <!-- 顶部功能菜单 -->
       <topVue />
@@ -21,11 +21,12 @@
 </template>
 
 <script setup>
-import asideVue from "./components/aside.vue";
+import asideVue from "./components/aside.vue";  //从当前目录开始
 import topVue from "./components/top.vue";
 import { ArrowRight } from "@element-plus/icons-vue";
-import router from "@/router";
+import router from "@/router";  //从根目录(src)开始
 import { reactive, ref, watch } from "vue";
+//import { reactive, ref, watch } from "@vue"; //等价
 
 // 定义面包屑列表
 let breadcrumblist = reactive([
@@ -42,7 +43,6 @@ let breadcrumblist = reactive([
 let pathMap = [
   { path: "news", title: "最近文档" },
   { path: "share", title: "与我共享" },
-  { path: "favor", title: "我的收藏" },
 ];
 
 let activeMenu = ref("pages");

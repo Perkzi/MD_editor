@@ -15,8 +15,9 @@
     <div
       class="aside-icon"
       @click="menuClick('pages')"
-      :class="{ active: activeMenu === 'pages' }"
+      :class="{ active: activeMenu === 'pages' }"  
     >
+      <!-- 点击时class为"aside-icon active"未点击时为"aside-icon"如果active就变色 -->
       <i class="iconfont icon-shouye-zhihui"></i>
       <span> 首页 </span>
     </div>
@@ -39,14 +40,6 @@
       <span> 与我共享 </span>
     </div>
 
-    <div
-      class="aside-icon"
-      @click="menuClick('favor')"
-      :class="{ active: activeMenu === 'favor' }"
-    >
-      <i class="iconfont icon-shoucang2"></i>
-      <span> 我的收藏 </span>
-    </div>
 
     <div class="aside-bottom" @click="router.push('/recycle')">
       <i class="iconfont icon-huishouzhan"></i>
@@ -59,6 +52,7 @@
 import { provide, ref, watch } from "vue";
 import router from "@/router";
 import { Search } from "@element-plus/icons-vue";
+import { User } from "@element-plus/icons-vue";
 import store from "../../../store";
 
 const searchKeyWord = ref("");
@@ -66,17 +60,16 @@ const searchKeyWord = ref("");
  * /home/pages: 首页
  * /home/news: 最近
  * /home/share: 共享
- * /home/favor: 收藏
  */
 
-watch(searchKeyWord, (val) => store.commit("setSearchKeyWord", val));
+watch(searchKeyWord, (val) => store.commit("setSearchKeyWord", val));   //在组件中调用Vuex的mutations来改变state的值
 
 let { activeMenu } = defineProps({
   activeMenu: {
     type: String,
     default: "pages",
   },
-});
+});  // 父组件向子组件传递数据
 
 const menuClick = (path) => router.push(`/home/${path}`);
 </script>

@@ -1,130 +1,806 @@
-[2024-10-31 05:18:05 +08:00Z] [INFO] - 开始初始化 node 方法 
-[2024-10-31 05:18:05 +08:00Z] [SUCCESS] - Socket Server is running... 
-[2024-10-31 05:18:06 +08:00Z] [SUCCESS] - WS 服务初始化成功，连接地址：ws://localhost:9000 
-[2024-10-31 05:18:06 +08:00Z] [SUCCESS] - Node Serve is running at http://localhost:5000. 
-[2024-10-31 05:18:06 +08:00Z] [INFO] - 连接数据库成功！ 
-[2024-10-31 05:18:25 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='lixiao'&&password='b73c63bab0d125a1de69c8f270f92e54' 
-[2024-10-31 05:18:25 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
-[2024-10-31 05:18:26 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
-[2024-10-31 05:18:26 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
-[2024-10-31 05:18:26 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:18:28 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
-    WHERE fs.editor='lixiao' AND fl.fileid=fs.fileid 
-[2024-10-31 05:18:28 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:18:45 +08:00Z] [INFO] - SELECT * FROM files WHERE state=1 AND  filename='test' AND filetype='markdown' AND filesuffix='md' AND owner='lixiao' 
-[2024-10-31 05:18:45 +08:00Z] [INFO] - INSERT INTO files(fileid,filename,filetype,filesuffix,owner) 
-         VALUES('uNjB6Hj2E1Y17szXzAbNo','test','markdown','md','lixiao') 
-[2024-10-31 05:18:45 +08:00Z] [DEBUG] - [status] 200 [msg] 文件创建成功 
-[2024-10-31 05:18:50 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
-    WHERE fs.editor='lixiao' AND fl.fileid=fs.fileid 
-[2024-10-31 05:18:50 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:18:51 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
-[2024-10-31 05:18:51 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
-[2024-10-31 05:18:51 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:19:26 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
-    WHERE fs.editor='lixiao' AND fl.fileid=fs.fileid 
-[2024-10-31 05:19:26 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:19:29 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
-[2024-10-31 05:19:29 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
-[2024-10-31 05:19:29 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:19:33 +08:00Z] [INFO] - 用户连接... 
-[2024-10-31 05:19:33 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='RxxZnT1EIVH7OaOwt-M_n' AND OWNER ='lixiao' 
-[2024-10-31 05:19:33 +08:00Z] [INFO] - yjs 客户端连接 
-[2024-10-31 05:19:33 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
-[2024-10-31 05:19:33 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='RxxZnT1EIVH7OaOwt-M_n' AND files.currenthead=versions.vid 
-[2024-10-31 05:19:33 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:19:33 +08:00Z] [INFO] - 用户加入房间 RxxZnT1EIVH7OaOwt-M_n 
-[2024-10-31 05:19:36 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='RxxZnT1EIVH7OaOwt-M_n' AND OWNER ='lixiao' 
-[2024-10-31 05:19:36 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
-[2024-10-31 05:19:39 +08:00Z] [WARN] - yjs 用户关闭连接 
-[2024-10-31 05:19:39 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
-[2024-10-31 05:19:39 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
-[2024-10-31 05:19:39 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:26:50 +08:00Z] [INFO] - 开始初始化 node 方法 
-[2024-10-31 05:26:50 +08:00Z] [SUCCESS] - Socket Server is running... 
-[2024-10-31 05:26:50 +08:00Z] [SUCCESS] - WS 服务初始化成功，连接地址：ws://localhost:9000 
-[2024-10-31 05:26:50 +08:00Z] [SUCCESS] - Node Serve is running at http://localhost:5000. 
-[2024-10-31 05:26:50 +08:00Z] [INFO] - 连接数据库成功！ 
-[2024-10-31 05:27:13 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='lixiao'&&password='b73c63bab0d125a1de69c8f270f92e54' 
-[2024-10-31 05:27:13 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
-[2024-10-31 05:27:13 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
-[2024-10-31 05:27:13 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
-[2024-10-31 05:27:13 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:27:32 +08:00Z] [DEBUG] - [status] 500 [msg] 参数缺失 
-[2024-10-31 05:28:16 +08:00Z] [INFO] - 用户连接... 
-[2024-10-31 05:28:16 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='uNjB6Hj2E1Y17szXzAbNo' AND OWNER ='lixiao' 
-[2024-10-31 05:28:16 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
-[2024-10-31 05:28:16 +08:00Z] [INFO] - yjs 客户端连接 
-[2024-10-31 05:28:16 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='uNjB6Hj2E1Y17szXzAbNo' AND files.currenthead=versions.vid 
-[2024-10-31 05:28:16 +08:00Z] [DEBUG] - [status] 6003 [msg] 参数缺失 
-[2024-10-31 05:28:16 +08:00Z] [INFO] - 用户加入房间 uNjB6Hj2E1Y17szXzAbNo 
-[2024-10-31 05:28:33 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='uNjB6Hj2E1Y17szXzAbNo' 
-[2024-10-31 05:28:33 +08:00Z] [INFO] - INSERT INTO versions(vid,fileid,content,lasteditor)VALUES('P5DAVkyUNxEqoD6JHdaJa','uNjB6Hj2E1Y17szXzAbNo','[{"attributes":{"bold":true},"insert":"# test"},{"insert":"\n"},{"attributes":{"italic":true},"insert":"test"},{"insert":"\n\ntes2\n"}]','lixiao') 
-[2024-10-31 05:28:33 +08:00Z] [INFO] - UPDATE files 
-    SET currenthead='P5DAVkyUNxEqoD6JHdaJa' 
+[2024-10-31 03:47:58 +08:00Z] [INFO] - 开始初始化 node 方法 
+[2024-10-31 03:47:58 +08:00Z] [SUCCESS] - Socket Server is running... 
+[2024-10-31 03:47:58 +08:00Z] [SUCCESS] - WS 服务初始化成功，连接地址：ws://localhost:9000 
+[2024-10-31 03:47:58 +08:00Z] [SUCCESS] - Node Serve is running at http://localhost:5000. 
+[2024-10-31 03:47:58 +08:00Z] [INFO] - 连接数据库成功！ 
+[2024-10-31 03:48:14 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='1'&&password='c4ca4238a0b923820dcc509a6f75849b' 
+[2024-10-31 03:48:14 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 03:48:14 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 03:48:14 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 03:48:14 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 03:51:25 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 03:51:25 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 03:51:26 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 03:51:26 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 03:51:26 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 03:57:47 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 03:57:47 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 03:57:47 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 03:59:16 +08:00Z] [INFO] - 开始初始化 node 方法 
+[2024-10-31 03:59:16 +08:00Z] [SUCCESS] - Socket Server is running... 
+[2024-10-31 03:59:16 +08:00Z] [SUCCESS] - WS 服务初始化成功，连接地址：ws://localhost:9000 
+[2024-10-31 03:59:16 +08:00Z] [SUCCESS] - Node Serve is running at http://localhost:5000. 
+[2024-10-31 03:59:16 +08:00Z] [INFO] - 连接数据库成功！ 
+[2024-10-31 03:59:23 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='1'&&password='c4ca4238a0b923820dcc509a6f75849b' 
+[2024-10-31 03:59:23 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 03:59:23 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 03:59:23 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 03:59:23 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:03:13 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:03:13 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:03:13 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:03:14 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:03:14 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:03:14 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:03:16 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:03:16 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:03:16 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:03:39 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:03:39 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:03:39 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:04:07 +08:00Z] [INFO] - 开始初始化 node 方法 
+[2024-10-31 04:04:08 +08:00Z] [SUCCESS] - Socket Server is running... 
+[2024-10-31 04:04:08 +08:00Z] [SUCCESS] - WS 服务初始化成功，连接地址：ws://localhost:9000 
+[2024-10-31 04:04:08 +08:00Z] [SUCCESS] - Node Serve is running at http://localhost:5000. 
+[2024-10-31 04:04:08 +08:00Z] [INFO] - 连接数据库成功！ 
+[2024-10-31 04:04:17 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='1'&&password='c4ca4238a0b923820dcc509a6f75849b' 
+[2024-10-31 04:04:17 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 04:04:17 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:04:17 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:04:17 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:04:19 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:04:19 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:04:19 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:04:19 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 04:04:19 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:04:21 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 04:04:21 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:04:21 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 04:04:21 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:04:22 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 04:04:22 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:04:22 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:04:22 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:04:22 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:05:09 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 04:05:09 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:05:09 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 04:05:09 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:05:10 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:05:10 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:05:10 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:06:06 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:06:06 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:06:06 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:06:08 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 04:06:08 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:06:09 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:06:09 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:06:09 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:06:19 +08:00Z] [INFO] - 开始初始化 node 方法 
+[2024-10-31 04:06:19 +08:00Z] [SUCCESS] - Socket Server is running... 
+[2024-10-31 04:06:19 +08:00Z] [SUCCESS] - WS 服务初始化成功，连接地址：ws://localhost:9000 
+[2024-10-31 04:06:19 +08:00Z] [SUCCESS] - Node Serve is running at http://localhost:5000. 
+[2024-10-31 04:06:19 +08:00Z] [INFO] - 连接数据库成功！ 
+[2024-10-31 04:06:34 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='1'&&password='c4ca4238a0b923820dcc509a6f75849b' 
+[2024-10-31 04:06:34 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 04:06:34 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:06:34 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:06:34 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:06:40 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 04:06:40 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:06:40 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 04:06:40 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:06:41 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:06:41 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:06:41 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:06:41 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 04:06:41 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:07:07 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 04:07:07 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:07:09 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:07:09 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:07:09 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:07:16 +08:00Z] [INFO] - 开始初始化 node 方法 
+[2024-10-31 04:07:17 +08:00Z] [SUCCESS] - Socket Server is running... 
+[2024-10-31 04:07:17 +08:00Z] [SUCCESS] - WS 服务初始化成功，连接地址：ws://localhost:9000 
+[2024-10-31 04:07:17 +08:00Z] [SUCCESS] - Node Serve is running at http://localhost:5000. 
+[2024-10-31 04:07:17 +08:00Z] [INFO] - 连接数据库成功！ 
+[2024-10-31 04:07:25 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='2' 
+[2024-10-31 04:07:25 +08:00Z] [INFO] - INSERT INTO users(userid,username,userimg,password) VALUES('2','用户_bgj4H','<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 231 231"><path d="M33.83,33.83a115.5,115.5,0,1,1,0,163.34,115.49,115.49,0,0,1,0-163.34Z" style="fill:#00d2a3;"/><path d="m115.5 51.75a63.75 63.75 0 0 0-10.5 126.63v14.09a115.5 115.5 0 0 0-53.729 19.027 115.5 115.5 0 0 0 128.46 0 115.5 115.5 0 0 0-53.729-19.029v-14.084a63.75 63.75 0 0 0 53.25-62.881 63.75 63.75 0 0 0-63.65-63.75 63.75 63.75 0 0 0-0.09961 0z" style="fill:#755227;"/><path d="m141.74 195a114.93 114.93 0 0 1 37.912 16.45l0.07 0.05c-1.17 0.79-2.3601 1.55-3.5601 2.29a115.55 115.55 0 0 1-120.95 0.21q-2.0001-1.23-4.0002-2.54a114.79 114.79 0 0 1 38.002-16.5 116.21 116.21 0 0 1 15.791-2.49v-14.57c1.32 0.22 2.6501 0.39 4.0002 0.51 2.0001 0.19 4.0002 0.28 6.1202 0.29a64.333 64.33 0 0 0 8.8804-0.62c0.67003-0.09 1.3401-0.2 2.0001-0.31v14.69a118 118 0 0 1 15.741 2.54z" style="fill:#000;"/><path d="m79.292 212a3.4601 3.46 0 0 0 3.8902 5.07 3.3801 3.38 0 0 0 2.1001-1.61 3.4701 3.47 0 0 0-1.2801-4.72 3.4201 3.42 0 0 0-2.6201-0.34 3.5101 3.51 0 0 0-2.0901 1.6zm60.122 0.46a3.4901 3.49 0 0 0 1.21 4.7h0.06a3.4601 3.46 0 0 0 4.7202-1.27l0.07-0.13a3.4601 3.46 0 0 0-1.34-4.6 3.4601 3.46 0 0 0-2.5801-0.32 3.5301 3.53 0 0 0-2.1001 1.61zm9.8004 5.7 5.8602 5.87c-1.39 0.5-2.7901 1-4.2102 1.44l-4.4802-4.47a7.5203 7.52 0 0 1-1.9401 0.81 7.8303 7.83 0 0 1-6.0002-0.79 7.8703 7.87 0 0 1-2.9201-10.69v-0.07a7.8903 7.89 0 0 1 10.77-2.88l0.12 0.07a7.8603 7.86 0 0 1 2.7901 10.62v0.07zm-37.701-2.36-9.5004 9.51v4.9c-1.35-0.16-2.6801-0.33-4.0002-0.54v-6l0.58002-0.58 10.1-10.09a7.8703 7.87 0 1 1 2.8401 2.86zm7.3203-5.91a3.4601 3.46 0 1 0-1.6101 2.1 3.3801 3.38 0 0 0 1.6101-2.1zm-29.741 7.82 3.0901 3.1 0.59002 0.59v7.36c-1.3401-0.26-2.6801-0.55-4.0002-0.87v-4.84l-2.5101-2.51a7.5203 7.52 0 0 1-1.9401 0.81 7.8803 7.88 0 1 1 1.9101-14.43 7.8703 7.87 0 0 1 2.8901 10.75z" style="fill:#fff;"/><path d="m57.534 142.03c-6.9383-31.75-0.57294-52.577 14.174-62.344 22.562-12.283 62.082-12.222 83.484-1.8846 21.348 11.177 22.124 37.396 18.498 63.733 8.1279-14.155 13.164-31.598 14.085-48.902 1.0828-11.795-1.1756-18.866-7.4833-27.972-26.465-37.685-103.45-31.56-129.66-2.8372-7.8504 9.4615-9.6006 17.478-9.275 26.667 1.0024 18.667 6.9688 38.508 16.18 53.54z" style="fill:#ff9809;"/><path d="m111.26 3.0423c-6.013 0.1128-12.629 2.6924-15.291 7.9082-1.1676 3.2383-1.6758 6.2069-1.6758 8.8926 0.89228-0.2661 1.8005-0.5164 2.7266-0.7441 3.7502-1.0672 7.4851-1.7135 11.129-1.9981 1.1007-0.086 2.1953-0.1391 3.2773-0.1601h2e-3c5.6969-0.1133 11.09 0.6603 15.904 2.0527 0.0552-3.042-0.70696-5.9824-2.1738-8.5-1.8411-3.1599-4.7033-5.5568-8.4297-6.8262-1.6883-0.4952-3.5163-0.662-5.4688-0.625zm3.0664 17.449c-0.69317-0.01-1.3919-0.01-2.0938 0h-2e-3c-1.1591 0.019-2.3326 0.064-3.5117 0.1386-3.9035 0.246-7.9025 0.8061-11.92 1.7285-15.159 3.0075-26.469 9.9279-22.068 19.682 22.891-8.7773 52.315-10.403 76.023-2.2129 2.1414-9.5529-14.939-19.081-36.428-19.34z" style="fill:#ff9809;"/><path d="m165.62 16.981c-0.8575 0-1.9406 0.54389-3.3476 1.3574-7.3382 4.7652-13.452 10.867-19.516 18.363 9.2734 2.1825 17.903 5.6706 25.213 10.604 1.1512-9.1263 1.9137-18.503 0.055-26.996-0.57-2.4184-1.3017-3.3267-2.4043-3.3281zm-104.09 1.6934c-1.1026 0-1.8342 0.91165-2.4043 3.3301-1.8794 8.5869-1.0806 18.078 0.092 27.299 7.0559-4.6638 15.687-8.3667 25.111-10.984-6.043-7.4601-12.139-13.537-19.451-18.285-1.407-0.81353-2.4901-1.3605-3.3477-1.3594z" style="fill:none;"/><path d="m162.45 16.686c-2.3175 2e-3 -4.6276 0.57608-6.8926 1.668-8.4768 6.0155-11.113 13.349-10.133 19.787 10.323 2.7077 19.762 7.0658 27.346 13.279 9.848-4.9363 11.32-17.137 4.6152-25.852-4.7104-6.1222-9.8371-8.8878-14.936-8.8828zm-97.318 4.1387c-2.4569 0.0556-5.1642 0.54474-8.1172 1.5176-13.487 4.4433-19.06 21.215-3.6484 31.84 7.2476-6.0694 16.961-10.896 27.892-14.229 0.2193-3.3241-0.3201-7.0817-1.8691-11.236-2.8049-4.8445-7.2233-7.721-13.221-7.8906-0.3408-0.01-0.6861-0.01-1.0371-2e-3z" style="fill:none;"/><path d="m145.38 95.628c-5.1601 2.2597-11.03 2.2597-16.19 0m-47.29 1.75c5.1755-2.2694 11.065-2.2694 16.24 0" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:5.9998px;stroke:#795548;"/><path d="m90.016 106.28c-4.4506-0.0105-6.6902 5.3657-3.5508 8.5195 3.1394 3.1539 8.5252 0.93887 8.5352-3.5117 0.0063-2.7522-2.2204-4.9898-4.9727-4.9961l-0.011719-0.01172zm47.281 0c-4.4506-0.0105-6.6902 5.3657-3.5508 8.5195 3.1394 3.1539 8.5252 0.93887 8.5352-3.5117 6e-3 -2.7522-2.2204-4.9898-4.9727-4.9961l-0.01171-0.01172z" style="fill:#000;"/><path d="m97.06 144.59a20.15 20.15 0 0 0 36.88 4.53z" style="fill:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.9999px;stroke:#000;"/></svg>','c81e728d9d4c2f636f067f89cc14862c') 
+[2024-10-31 04:07:25 +08:00Z] [DEBUG] - [status] 200 [msg] 用户注册成功 
+[2024-10-31 04:07:29 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='2'&&password='c81e728d9d4c2f636f067f89cc14862c' 
+[2024-10-31 04:07:29 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 04:07:29 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='2' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:07:29 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='2' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:07:29 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:07:31 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='2' AND fl.fileid=fs.fileid 
+[2024-10-31 04:07:31 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:07:31 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='2' AND fl.fileid=fs.fileid 
+[2024-10-31 04:07:31 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:07:32 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='2' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:07:32 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='2' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:07:32 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 04:19:59 +08:00Z] [INFO] - 开始初始化 node 方法 
+[2024-10-31 04:19:59 +08:00Z] [SUCCESS] - Socket Server is running... 
+[2024-10-31 04:19:59 +08:00Z] [SUCCESS] - WS 服务初始化成功，连接地址：ws://localhost:9000 
+[2024-10-31 04:19:59 +08:00Z] [SUCCESS] - Node Serve is running at http://localhost:5000. 
+[2024-10-31 04:19:59 +08:00Z] [INFO] - 连接数据库成功！ 
+[2024-10-31 04:20:16 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='1'&&password='c4ca4238a0b923820dcc509a6f75849b' 
+[2024-10-31 04:20:16 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 04:20:16 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 04:20:16 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 04:20:16 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:13:06 +08:00Z] [INFO] - 开始初始化 node 方法 
+[2024-10-31 05:13:07 +08:00Z] [SUCCESS] - Socket Server is running... 
+[2024-10-31 05:13:07 +08:00Z] [SUCCESS] - WS 服务初始化成功，连接地址：ws://localhost:9000 
+[2024-10-31 05:13:07 +08:00Z] [SUCCESS] - Node Serve is running at http://localhost:5000. 
+[2024-10-31 05:13:07 +08:00Z] [INFO] - 连接数据库成功！ 
+[2024-10-31 05:13:18 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='1'&&password='c4ca4238a0b923820dcc509a6f75849b' 
+[2024-10-31 05:13:18 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 05:13:18 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:13:18 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:13:18 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:13:22 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 05:13:22 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:13:23 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 05:13:23 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:13:23 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:13:23 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:13:23 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:13:26 +08:00Z] [INFO] - 用户连接... 
+[2024-10-31 05:13:26 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:13:26 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:13:26 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:13:26 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:13:26 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='25AF8WQa3MAenlLWytEi3' AND files.currenthead=versions.vid 
+[2024-10-31 05:13:26 +08:00Z] [DEBUG] - [status] 6003 [msg] 参数缺失 
+[2024-10-31 05:13:30 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:13:30 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:13:30 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:13:30 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:16:49 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 05:16:49 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:16:49 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 05:16:49 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:16:50 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:16:50 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:16:50 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:16:50 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 05:16:50 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:16:50 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 05:16:50 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:16:51 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 05:16:51 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:16:52 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='1' AND fl.fileid=fs.fileid 
+[2024-10-31 05:16:52 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:16:54 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:16:54 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:16:54 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:16:56 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:16:56 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:16:56 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:17:38 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:17:38 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:17:38 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:17:42 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:17:42 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:17:42 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:19:05 +08:00Z] [DEBUG] - [status] 500 [msg] 参数缺失 
+[2024-10-31 05:19:13 +08:00Z] [INFO] - SELECT * FROM files WHERE state=1 AND  filename='HW6' AND filetype='word' AND filesuffix='docx' AND owner='1' 
+[2024-10-31 05:19:13 +08:00Z] [INFO] - INSERT INTO files(fileid,filename,filetype,filesuffix,owner) 
+         VALUES('JlY-MYu0ITmZCGe2HcXz_','HW6','word','docx','1') 
+[2024-10-31 05:19:13 +08:00Z] [DEBUG] - [status] 200 [msg] 文件创建成功 
+[2024-10-31 05:19:17 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 05:19:35 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 05:19:35 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:19:35 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:19:35 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:20:02 +08:00Z] [INFO] - SELECT * FROM files WHERE state=1 AND  filename='README' AND filetype='markdown' AND filesuffix='md' AND owner='1' 
+[2024-10-31 05:20:02 +08:00Z] [INFO] - INSERT INTO files(fileid,filename,filetype,filesuffix,owner) 
+         VALUES('1_MjMB8L31VqDugvb1QIs','README','markdown','md','1') 
+[2024-10-31 05:20:02 +08:00Z] [DEBUG] - [status] 200 [msg] 文件创建成功 
+[2024-10-31 05:20:02 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='1_MjMB8L31VqDugvb1QIs' 
+[2024-10-31 05:20:02 +08:00Z] [INFO] - INSERT INTO versions(vid,fileid,content,lasteditor)VALUES('ENq4Mz26mcHwBP_rK7Z9G','1_MjMB8L31VqDugvb1QIs','[{"insert":" 多人协同编辑器项目说明","attributes":{"header":1}},{"insert":""},{"insert":" 免责声明","attributes":{"header":2}},{"insert":""},{"insert":"本项目仅作为学习项目，仅供学习交流，目前还没达到应用生产的能力；"},{"insert":""},{"insert":"markdown 协同中，Delta 数据结构存储仍采用 JSON.stringify 存储全量数据；luchysheet 中仍有部分方法未实现，例如 新建sheet 页、删除 sheet 页等；而 canvas-editor 数据存储部分未开发；"},{"insert":""},{"insert":"项目为本人一人开发，在架构设计、代码可阅读性、可维护性上可能存在缺陷，功能上存在不完整部分；个人精力确实有限，望大家谅解；后续项目的维护会持续跟进 issues 问题，帮忙解决大家的疑惑。（也可加V：18276861941）"},{"insert":""},{"insert":"如果大家数据库导入失败，可以看看 [#IAKJJI: sql有外键依赖，可以按照这个顺序，原mysql中的顺序直接执行会有错误](https://gitee.com/wfeng0/mpoe/issues/IAKJJI)","attributes":{"header":null}},{"insert":""},{"insert":" 项目目录结构","attributes":{"header":2}},{"insert":""},{"insert":"<p align=#[s]#center#[s]#>"},{"insert":"    <img src=#[d]#./public/catalog.png#[d]#/>"},{"insert":"</p>"},{"insert":""},{"insert":""},{"insert":""},{"insert":" 项目端口说明","attributes":{"header":2}},{"insert":""},{"insert":"~~~javascript","attributes":{"header":null}},{"insert":"/** node/base.config.js*/"},{"insert":"// 业务端口"},{"insert":"const server_port = 5000;"},{"insert":""},{"insert":"// ws 统一端口"},{"insert":"const ws_port = 9000;"},{"insert":""},{"insert":"/** Vue/default.config.js */"},{"insert":"// ws 协同服务地址"},{"insert":"export const ws_server_url = #[s]#ws://localhost:9000#[s]#;"},{"insert":""},{"insert":"// node http 服务地址"},{"insert":"export const http_server_url = #[s]#http://localhost:5000#[s]#;"},{"insert":""},{"insert":"// socket.io 服务地址"},{"insert":"export const socket_server_url = #[s]#http://localhost:5000#[s]#;"},{"insert":""},{"insert":"地址已经给大家封装好了，直接修改上面的地址即可。"},{"insert":"~~~","attributes":{"header":null}},{"insert":""},{"insert":""},{"insert":""},{"insert":" 项目启动方式**【必看】**","attributes":{"header":2}},{"insert":""},{"insert":"> 1. *** 下列命令均是在项目根目录执行【根目录  D:\\MPOE>  MPOE结尾】"},{"insert":">"},{"insert":"> 2. *** 下列命令均是在项目根目录执行【根目录  D:\\MPOE>  MPOE结尾】"},{"insert":">"},{"insert":"> 3. *** 下列命令均是在项目根目录执行【根目录  D:\\MPOE>  MPOE结尾】"},{"insert":">"},{"insert":"> 4. node 版本说明：**本应用基于 node v14**,其他版本如若报错，可以自行搭建其他版本的应用","attributes":{"header":null}},{"insert":">"},{"insert":"> 5. 命令说明："},{"insert":">"},{"insert":">    1. 执行的命令均是为大家封装好的，如果大家懂得原理，也可以自行操作"},{"insert":">"},{"insert":"> 6. 依赖下载方式："},{"insert":">"},{"insert":">    1. npm run installVue ：下载Vue相关依赖"},{"insert":">    2. npm run installNode ：下载 node 相关依赖"},{"insert":">"},{"insert":"> 7. 启动方式："},{"insert":">"},{"insert":">    1. 协同服务："},{"insert":">"},{"insert":">       ```javascript"},{"insert":">       1. **推荐使用 Websocket 的协同方式**","attributes":{"header":null}},{"insert":">           正常启动 node 即可支持 y-websocket 协同服务"},{"insert":">       ```"},{"insert":">"},{"insert":">    2. （方式一）npm run node"},{"insert":">"},{"insert":">       1. 上述方式启动的是Node服务器，地址为 [http://localhost:5000](http://localhost:5000) ，该方式**运行的是Vue打包后的dist文件**","attributes":{"header":null}},{"insert":">"},{"insert":">    3. （方式二）npm run dev"},{"insert":">"},{"insert":">       1. 上述启动的是vue的开发环境，也可以使用"},{"insert":">       2. 调试后，请重新打包放在 node服务上(打包的dist输出目录已经自动设置到node/public下)"},{"insert":">"},{"insert":">    4. 几个注意事项："},{"insert":">"},{"insert":">       1. 请确保数据库服务正常开启，在Mysql文价夹下，有当前文件的数据库表说明文件：README.md 以及项目数据库文件 mysql.sql,如果对项目数据结构有疑问，请先查看相关数据结构说明文档哈"},{"insert":">"},{"insert":">       2. 文件上传的路径问题，mvc -> controller -> file -> uploadFile 中有一个mv()方法，传入的是当前执行命令的根路径，如果在协同编辑中文件上传出现问题，可以看看这里；"},{"insert":">"},{"insert":">       3. node采用较强的模块化思想，每个单独的模块都会独立导出 index.js ，因此，node有很多的 index.js，注意区分;"},{"insert":">"},{"insert":">       4. 重新打包后（vue项目包、luckysheet二开包），luckysheet 文件的处理："},{"insert":">       5. 将luckysheet的dist放到node项目下，确保 index.html 引用正确的 luckysheet 即可。"},{"insert":">       6. socket.io 在服务端有一个跨域的配置，在 Node/socket/index.js 中，这是聊天用的，大家根据实际情况配置即可。"},{"insert":"```js"},{"insert":"  const io = socketIO(http, {"},{"insert":"    allowEIO3: true,"},{"insert":"    cors: {"},{"insert":"      origin: ["},{"insert":"        #[s]#http://localhost:3000#[s]#,"},{"insert":"        #[s]#http://127.0.0.1:3000#[s]#,"},{"insert":"        #[s]#http://localhost:3001#[s]#,"},{"insert":"        #[s]#http://127.0.0.1:3001#[s]#,"},{"insert":"      ],"},{"insert":"      methods: [#[s]#GET#[s]#, #[s]#POST#[s]#],"},{"insert":"      credentials: true,"},{"insert":"    },"},{"insert":"  });"},{"insert":"```"},{"insert":""},{"insert":""},{"insert":""},{"insert":" 打包后文件处理","attributes":{"header":2}},{"insert":""},{"insert":"```javascript"},{"insert":"1. 打包命令"},{"insert":"    npm run build"},{"insert":"    "},{"insert":"2. 生成 dist 目录，将自动放置到 node/public 下"},{"insert":""},{"insert":"3. 检查并调整script引用地址为node结构下的luckysheet地址"},{"insert":"    <!-- 引入 luckySheet（下列两个地址需要重新定位，确保文件引入正确） -->"},{"insert":"    <script src=#[s]#../libs/luckysheet/plugins/js/plugin.js#[s]#></script>"},{"insert":"    <script src=#[s]#../libs/luckysheet/luckysheet.umd.js#[s]#></script>"},{"insert":""},{"insert":"4. 打包后，public 下的libs目录会一起打包到 dist 中，luckysheet 如果没有复制到node中，则引的是当前目录下的 libs 即可"},{"insert":"```"},{"insert":""},{"insert":""},{"insert":" 项目地址","attributes":{"header":2}},{"insert":""},{"insert":"gitee: [https://gitee.com/wfeng0/mpoe](https://gitee.com/wfeng0/mpoe)","attributes":{"header":null}},{"insert":""},{"insert":""},{"insert":""},{"insert":" 文章地址","attributes":{"header":2}},{"insert":""},{"insert":"yjs+quill协同: [https://blog.csdn.net/weixin_47746452/article/details/132402713?spm=1001.2014.3001.5501](https://blog.csdn.net/weixin_47746452/article/details/132402713?spm=1001.2014.3001.5501)","attributes":{"header":null}},{"insert":""},{"insert":"luckysheet协同：[https://blog.csdn.net/weixin_47746452/article/details/134240905?spm=1001.2014.3001.5501](https://blog.csdn.net/weixin_47746452/article/details/134240905?spm=1001.2014.3001.5501)","attributes":{"header":null}},{"insert":""},{"insert":"掘金：[https://juejin.cn/post/7298170736480485376](https://juejin.cn/post/7298170736480485376)","attributes":{"header":null}},{"insert":""},{"insert":""},{"insert":""},{"insert":" B站视频","attributes":{"header":2}},{"insert":""},{"insert":"B站：[https://www.bilibili.com/video/BV1Sj41117v4/?spm_id_from=333.999.0.0&vd_source=604a25c77e296b4ce29b1e6e6cf03ea6](https://www.bilibili.com/video/BV1Sj41117v4/?spm_id_from=333.999.0.0&vd_source=604a25c77e296b4ce29b1e6e6cf03ea6)","attributes":{"header":null}}]','1') 
+[2024-10-31 05:20:02 +08:00Z] [INFO] - UPDATE files 
+    SET currenthead='ENq4Mz26mcHwBP_rK7Z9G' 
      
      
      
-    WHERE fileid='uNjB6Hj2E1Y17szXzAbNo' 
-[2024-10-31 05:28:33 +08:00Z] [DEBUG] - [status] 200 [msg] 文件更新成功 
-[2024-10-31 05:28:35 +08:00Z] [WARN] - yjs 用户关闭连接 
-[2024-10-31 05:28:35 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
-[2024-10-31 05:28:35 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
-[2024-10-31 05:28:35 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:28:36 +08:00Z] [INFO] - 用户加入房间 uNjB6Hj2E1Y17szXzAbNo 
-[2024-10-31 05:28:36 +08:00Z] [INFO] - yjs 客户端连接 
-[2024-10-31 05:28:36 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='uNjB6Hj2E1Y17szXzAbNo' AND OWNER ='lixiao' 
-[2024-10-31 05:28:36 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
-[2024-10-31 05:28:36 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='uNjB6Hj2E1Y17szXzAbNo' AND files.currenthead=versions.vid 
-[2024-10-31 05:28:36 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+    WHERE fileid='1_MjMB8L31VqDugvb1QIs' 
+[2024-10-31 05:20:02 +08:00Z] [DEBUG] - [status] 200 [msg] 文件更新成功 
+[2024-10-31 05:20:04 +08:00Z] [INFO] - 用户加入房间 1_MjMB8L31VqDugvb1QIs?filename=README&filesuffix=md&filetype=markdown&owner=1 
+[2024-10-31 05:20:04 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:20:04 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='1_MjMB8L31VqDugvb1QIs?filename=README&filesuffix=md&filetype=markdown&owner=1' AND OWNER ='1' 
+[2024-10-31 05:20:04 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:20:04 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='1_MjMB8L31VqDugvb1QIs' AND files.currenthead=versions.vid 
+[2024-10-31 05:20:04 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:20:15 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:20:15 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:20:15 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:20:15 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:20:21 +08:00Z] [INFO] - SELECT * FROM files WHERE state=1 AND  filename='笔记' AND filetype='txt' AND filesuffix='txt' AND owner='1' 
+[2024-10-31 05:20:21 +08:00Z] [INFO] - INSERT INTO files(fileid,filename,filetype,filesuffix,owner) 
+         VALUES('XBVCbPqH0DyAzgeI0NjUz','笔记','txt','txt','1') 
+[2024-10-31 05:20:21 +08:00Z] [DEBUG] - [status] 200 [msg] 文件创建成功 
+[2024-10-31 05:20:33 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 05:20:34 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 05:20:34 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:20:34 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:20:34 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:20:36 +08:00Z] [INFO] - 用户加入房间 1_MjMB8L31VqDugvb1QIs 
+[2024-10-31 05:20:36 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:20:36 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='1_MjMB8L31VqDugvb1QIs' AND OWNER ='1' 
+[2024-10-31 05:20:36 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:20:36 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='1_MjMB8L31VqDugvb1QIs' AND files.currenthead=versions.vid 
+[2024-10-31 05:20:36 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:20:42 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:20:42 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:20:42 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:20:43 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:20:43 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:20:43 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:20:43 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:20:43 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='25AF8WQa3MAenlLWytEi3' AND files.currenthead=versions.vid 
+[2024-10-31 05:20:43 +08:00Z] [DEBUG] - [status] 6003 [msg] 参数缺失 
+[2024-10-31 05:20:55 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' 
+[2024-10-31 05:20:55 +08:00Z] [INFO] - INSERT INTO versions(vid,fileid,content,lasteditor)VALUES('2U5lMaYg9ooO2rh_p48sC','25AF8WQa3MAenlLWytEi3','[{"insert":"1221\n"}]','1') 
+[2024-10-31 05:20:55 +08:00Z] [INFO] - UPDATE files 
+    SET currenthead='2U5lMaYg9ooO2rh_p48sC' 
+     
+     
+     
+    WHERE fileid='25AF8WQa3MAenlLWytEi3' 
+[2024-10-31 05:20:55 +08:00Z] [DEBUG] - [status] 200 [msg] 文件更新成功 
+[2024-10-31 05:20:57 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:20:57 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:20:57 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:20:57 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:21:00 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:21:00 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:21:00 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:21:00 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:21:01 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:21:01 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:21:01 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:21:01 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:22:27 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 05:22:39 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 05:22:39 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:22:39 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:22:39 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:22:42 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:22:42 +08:00Z] [INFO] - 用户加入房间 1_MjMB8L31VqDugvb1QIs 
+[2024-10-31 05:22:42 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='1_MjMB8L31VqDugvb1QIs' AND OWNER ='1' 
+[2024-10-31 05:22:42 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:23:34 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:23:34 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:23:34 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:23:36 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 05:23:44 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 05:23:44 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:23:44 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:23:44 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:23:51 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:23:51 +08:00Z] [INFO] - 用户加入房间 1_MjMB8L31VqDugvb1QIs 
+[2024-10-31 05:23:51 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='1_MjMB8L31VqDugvb1QIs' AND OWNER ='1' 
+[2024-10-31 05:23:51 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:23:59 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:23:59 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:23:59 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:24:08 +08:00Z] [INFO] - SELECT * FROM files WHERE state=1 AND  filename='README' AND filetype='markdown' AND filesuffix='md' AND owner='1' 
+[2024-10-31 05:24:08 +08:00Z] [DEBUG] - [status] 4002 [msg] 参数缺失 
+[2024-10-31 05:24:21 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:24:21 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:24:21 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:24:21 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:24:21 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:24:21 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:24:30 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='1_MjMB8L31VqDugvb1QIs' 
+[2024-10-31 05:24:30 +08:00Z] [INFO] - UPDATE files 
+     
+     
+     
+    SET state='2' 
+    WHERE fileid='1_MjMB8L31VqDugvb1QIs' 
+[2024-10-31 05:24:30 +08:00Z] [DEBUG] - [status] 200 [msg] 已放入回收站 
+[2024-10-31 05:24:33 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:24:33 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:24:33 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:24:40 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='2 ORDER BY filetype' 
+[2024-10-31 05:24:40 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=2 AND ISNULL(parentfolderid) 
+[2024-10-31 05:24:40 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:24:59 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:24:59 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:24:59 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:25:10 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:25:10 +08:00Z] [INFO] - 用户连接... 
+[2024-10-31 05:25:10 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:25:10 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:25:10 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:25:10 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='25AF8WQa3MAenlLWytEi3' AND files.currenthead=versions.vid 
+[2024-10-31 05:25:10 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:26:54 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='1'&&password='c4ca4238a0b923820dcc509a6f75849b' 
+[2024-10-31 05:26:54 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 05:26:54 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:26:54 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:26:54 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:27:03 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:27:03 +08:00Z] [INFO] - 用户连接... 
+[2024-10-31 05:27:03 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:27:03 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:27:03 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:28:27 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:28:27 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:28:27 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:28:27 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:28:34 +08:00Z] [INFO] - SELECT * FROM files WHERE state=1 AND  filename='md2' AND filetype='markdown' AND filesuffix='md' AND owner='1' 
+[2024-10-31 05:28:34 +08:00Z] [INFO] - INSERT INTO files(fileid,filename,filetype,filesuffix,owner) 
+         VALUES('gFJ2NEpo49ECtZq-1yx6b','md2','markdown','md','1') 
+[2024-10-31 05:28:34 +08:00Z] [DEBUG] - [status] 200 [msg] 文件创建成功 
+[2024-10-31 05:28:35 +08:00Z] [INFO] - 用户加入房间 gFJ2NEpo49ECtZq-1yx6b 
+[2024-10-31 05:28:35 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:28:35 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='gFJ2NEpo49ECtZq-1yx6b' AND OWNER ='1' 
+[2024-10-31 05:28:35 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:28:38 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:28:38 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:28:38 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:28:38 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:28:39 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:28:39 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:28:39 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:28:39 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:28:44 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' 
+[2024-10-31 05:28:44 +08:00Z] [INFO] - SELECT * FROM versions WHERE vid='2U5lMaYg9ooO2rh_p48sC' 
+[2024-10-31 05:28:44 +08:00Z] [INFO] - 未超过时长，更新版本内容 
+[2024-10-31 05:28:44 +08:00Z] [INFO] - UPDATE versions SET content='[{"attributes":{"italic":true},"insert":"# 1"},{"insert":"&#128512;22\n\n\n"}]' WHERE fileid='25AF8WQa3MAenlLWytEi3' AND vid='2U5lMaYg9ooO2rh_p48sC' 
+[2024-10-31 05:28:44 +08:00Z] [DEBUG] - [status] 200 [msg] 已更新文件内容 
+[2024-10-31 05:28:45 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:28:45 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:28:45 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:28:45 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:28:46 +08:00Z] [INFO] - 用户加入房间 gFJ2NEpo49ECtZq-1yx6b 
+[2024-10-31 05:28:46 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:28:46 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='gFJ2NEpo49ECtZq-1yx6b' AND OWNER ='1' 
+[2024-10-31 05:28:46 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:29:09 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:29:09 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:29:09 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:29:12 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:29:12 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:29:12 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:29:12 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:29:19 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:29:19 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
 [2024-10-31 05:29:36 +08:00Z] [WARN] - yjs 用户关闭连接 
-[2024-10-31 05:29:36 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
-[2024-10-31 05:29:36 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:29:36 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:29:36 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
 [2024-10-31 05:29:36 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:29:38 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
-    WHERE fs.editor='lixiao' AND fl.fileid=fs.fileid 
-[2024-10-31 05:29:38 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:29:41 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
-    WHERE fs.editor='lixiao' AND fl.fileid=fs.fileid 
-[2024-10-31 05:29:41 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:29:43 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
-[2024-10-31 05:29:43 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
-[2024-10-31 05:29:43 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:29:44 +08:00Z] [INFO] - 用户连接... 
-[2024-10-31 05:29:44 +08:00Z] [INFO] - yjs 客户端连接 
-[2024-10-31 05:29:44 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='uNjB6Hj2E1Y17szXzAbNo' AND OWNER ='lixiao' 
-[2024-10-31 05:29:44 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
-[2024-10-31 05:29:44 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='uNjB6Hj2E1Y17szXzAbNo' AND files.currenthead=versions.vid 
-[2024-10-31 05:29:44 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:29:45 +08:00Z] [INFO] - 用户加入房间 uNjB6Hj2E1Y17szXzAbNo 
-[2024-10-31 05:30:01 +08:00Z] [WARN] - yjs 用户关闭连接 
-[2024-10-31 05:30:01 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
-[2024-10-31 05:30:01 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
-[2024-10-31 05:30:01 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:30:16 +08:00Z] [INFO] - 用户加入房间 uNjB6Hj2E1Y17szXzAbNo 
-[2024-10-31 05:30:16 +08:00Z] [INFO] - yjs 客户端连接 
-[2024-10-31 05:30:16 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='uNjB6Hj2E1Y17szXzAbNo' AND OWNER ='lixiao' 
-[2024-10-31 05:30:16 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
-[2024-10-31 05:30:16 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='uNjB6Hj2E1Y17szXzAbNo' AND files.currenthead=versions.vid 
-[2024-10-31 05:30:16 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:30:23 +08:00Z] [WARN] - yjs 用户关闭连接 
-[2024-10-31 05:30:23 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
-[2024-10-31 05:30:23 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
-[2024-10-31 05:30:23 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:30:31 +08:00Z] [INFO] - 用户加入房间 RxxZnT1EIVH7OaOwt-M_n 
-[2024-10-31 05:30:31 +08:00Z] [INFO] - yjs 客户端连接 
-[2024-10-31 05:30:31 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='RxxZnT1EIVH7OaOwt-M_n' AND OWNER ='lixiao' 
-[2024-10-31 05:30:31 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
-[2024-10-31 05:30:31 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='RxxZnT1EIVH7OaOwt-M_n' AND files.currenthead=versions.vid 
-[2024-10-31 05:30:31 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:30:48 +08:00Z] [WARN] - yjs 用户关闭连接 
-[2024-10-31 05:30:48 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='lixiao' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
-[2024-10-31 05:30:48 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='lixiao' AND state=1 AND ISNULL(parentfolderid) 
-[2024-10-31 05:30:48 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:30:59 +08:00Z] [INFO] - 用户加入房间 uNjB6Hj2E1Y17szXzAbNo 
-[2024-10-31 05:30:59 +08:00Z] [INFO] - yjs 客户端连接 
-[2024-10-31 05:30:59 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='uNjB6Hj2E1Y17szXzAbNo' AND OWNER ='lixiao' 
-[2024-10-31 05:30:59 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
-[2024-10-31 05:30:59 +08:00Z] [INFO] - SELECT versions.content FROM files,versions WHERE files.fileid='uNjB6Hj2E1Y17szXzAbNo' AND files.currenthead=versions.vid 
-[2024-10-31 05:30:59 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
-[2024-10-31 05:31:26 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:29:47 +08:00Z] [INFO] - 用户加入房间 gFJ2NEpo49ECtZq-1yx6b 
+[2024-10-31 05:29:47 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:29:47 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='gFJ2NEpo49ECtZq-1yx6b' AND OWNER ='1' 
+[2024-10-31 05:29:47 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:30:26 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:30:26 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:30:26 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:30:28 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:30:28 +08:00Z] [INFO] - 用户加入房间 gFJ2NEpo49ECtZq-1yx6b 
+[2024-10-31 05:30:28 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='gFJ2NEpo49ECtZq-1yx6b' AND OWNER ='1' 
+[2024-10-31 05:30:28 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:31:11 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:31:11 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:31:11 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:31:15 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:31:15 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:31:15 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:31:15 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:33:12 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:33:12 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:33:12 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:33:12 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:33:13 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:33:13 +08:00Z] [INFO] - 用户加入房间 gFJ2NEpo49ECtZq-1yx6b 
+[2024-10-31 05:33:13 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='gFJ2NEpo49ECtZq-1yx6b' AND OWNER ='1' 
+[2024-10-31 05:33:13 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:33:19 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='gFJ2NEpo49ECtZq-1yx6b' 
+[2024-10-31 05:33:19 +08:00Z] [INFO] - INSERT INTO versions(vid,fileid,content,lasteditor)VALUES('3kXgHT32XSOLDFvPz-5iQ','gFJ2NEpo49ECtZq-1yx6b','[{"attributes":{"italic":true},"insert":"# 1"},{"insert":"&#128512;22sdfghjxcv\n\n"}]','1') 
+[2024-10-31 05:33:19 +08:00Z] [INFO] - UPDATE files 
+    SET currenthead='3kXgHT32XSOLDFvPz-5iQ' 
+     
+     
+     
+    WHERE fileid='gFJ2NEpo49ECtZq-1yx6b' 
+[2024-10-31 05:33:19 +08:00Z] [DEBUG] - [status] 200 [msg] 文件更新成功 
+[2024-10-31 05:33:41 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:33:41 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:33:41 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:33:41 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:33:42 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:33:42 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:33:42 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:33:42 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:33:43 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:33:43 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:33:43 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:33:43 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:33:44 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:33:44 +08:00Z] [INFO] - 用户加入房间 gFJ2NEpo49ECtZq-1yx6b 
+[2024-10-31 05:33:44 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='gFJ2NEpo49ECtZq-1yx6b' AND OWNER ='1' 
+[2024-10-31 05:33:44 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:33:45 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:33:45 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:33:45 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:33:45 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:33:46 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:33:46 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:33:46 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:33:46 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:33:51 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' 
+[2024-10-31 05:33:51 +08:00Z] [INFO] - SELECT * FROM versions WHERE vid='2U5lMaYg9ooO2rh_p48sC' 
+[2024-10-31 05:33:51 +08:00Z] [INFO] - 未超过时长，更新版本内容 
+[2024-10-31 05:33:51 +08:00Z] [INFO] - UPDATE versions SET content='[{"attributes":{"italic":true},"insert":"# 1"},{"insert":"&#128512;22sdfghjxcv\n\n333\n"}]' WHERE fileid='25AF8WQa3MAenlLWytEi3' AND vid='2U5lMaYg9ooO2rh_p48sC' 
+[2024-10-31 05:33:51 +08:00Z] [DEBUG] - [status] 200 [msg] 已更新文件内容 
+[2024-10-31 05:33:53 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:33:53 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:33:53 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:33:53 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:33:56 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:33:56 +08:00Z] [INFO] - 用户加入房间 gFJ2NEpo49ECtZq-1yx6b 
+[2024-10-31 05:33:56 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='gFJ2NEpo49ECtZq-1yx6b' AND OWNER ='1' 
+[2024-10-31 05:33:56 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:33:57 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:33:57 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:33:57 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:33:57 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:34:31 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:34:31 +08:00Z] [INFO] - 用户加入房间 gFJ2NEpo49ECtZq-1yx6b 
+[2024-10-31 05:34:31 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='gFJ2NEpo49ECtZq-1yx6b' AND OWNER ='1' 
+[2024-10-31 05:34:31 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:34:33 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:34:33 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:34:33 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:34:35 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:34:35 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:34:35 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:34:35 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:35:17 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:35:17 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:35:17 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:35:17 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:35:17 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:35:17 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:35:17 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:35:17 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:35:18 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:35:18 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:35:18 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:35:24 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:35:24 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:35:24 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:35:24 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:35:24 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:35:24 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:35:25 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:35:25 +08:00Z] [INFO] - 用户连接... 
+[2024-10-31 05:35:25 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:35:25 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:35:25 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:35:27 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:35:27 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:35:27 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:35:28 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:35:28 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:35:28 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:35:28 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:36:56 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' 
+[2024-10-31 05:36:56 +08:00Z] [INFO] - SELECT * FROM versions WHERE vid='2U5lMaYg9ooO2rh_p48sC' 
+[2024-10-31 05:36:56 +08:00Z] [INFO] - 未超过时长，更新版本内容 
+[2024-10-31 05:36:56 +08:00Z] [INFO] - UPDATE versions SET content='[{"attributes":{"italic":true},"insert":"# 1"},{"insert":"&#128512;22sdfghjxcv\n\n3335555\n"}]' WHERE fileid='25AF8WQa3MAenlLWytEi3' AND vid='2U5lMaYg9ooO2rh_p48sC' 
+[2024-10-31 05:36:56 +08:00Z] [DEBUG] - [status] 200 [msg] 已更新文件内容 
+[2024-10-31 05:41:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:41:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:41:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:41:01 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:41:01 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:41:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:41:25 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:41:25 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:41:25 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:41:25 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:43:06 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:43:06 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:43:06 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:43:06 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:45:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:45:01 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:45:01 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:45:01 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:45:01 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:45:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:46:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:46:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:46:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:46:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:46:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:46:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:46:16 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:46:16 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:46:16 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:46:16 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:46:31 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='2'&&password='c81e728d9d4c2f636f067f89cc14862c' 
+[2024-10-31 05:46:31 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 05:46:31 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='2' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:46:31 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='2' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:46:31 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:46:42 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:46:42 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:46:42 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:46:42 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:46:46 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:46:46 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:46:46 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:46:46 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:46:48 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:46:48 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:47:30 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='2'&&password='c81e728d9d4c2f636f067f89cc14862c' 
+[2024-10-31 05:47:30 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 05:47:32 +08:00Z] [INFO] - SELECT * FROM filestates WHERE fileid='25AF8WQa3MAenlLWytEi3' AND editor='2' 
+[2024-10-31 05:47:32 +08:00Z] [INFO] - INSERT INTO filestates(fsid,fileid,editor) VALUES('47vh7h18yV6ca8loE4w27','25AF8WQa3MAenlLWytEi3','2') 
+[2024-10-31 05:47:32 +08:00Z] [DEBUG] - [status] 200 [msg] 加入成功 
+[2024-10-31 05:47:32 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='2' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:47:32 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='2' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:47:32 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:47:35 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='2' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:47:35 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='2' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:47:35 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:47:38 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='2' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:47:38 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='2' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:47:38 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:47:39 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='2' AND fl.fileid=fs.fileid 
+[2024-10-31 05:47:39 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:47:40 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:47:40 +08:00Z] [INFO] - 用户连接... 
+[2024-10-31 05:47:40 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3?fileid=25AF8WQa3MAenlLWytEi3&editor=2&favor&top&createtime=2024-10-25&filename=md1&filetype=markdown&filesuffix=md&owner=1' AND OWNER ='2' 
+[2024-10-31 05:47:40 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:47:40 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3?fileid=25AF8WQa3MAenlLWytEi3&editor=2&favor&top&createtime=2024-10-25&filename=md1&filetype=markdown&filesuffix=md&owner=1 
+[2024-10-31 05:48:02 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:48:02 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:48:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:48:02 +08:00Z] [INFO] - 用户连接... 
+[2024-10-31 05:48:02 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='25AF8WQa3MAenlLWytEi3' AND OWNER ='1' 
+[2024-10-31 05:48:02 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:48:02 +08:00Z] [INFO] - 用户加入房间 25AF8WQa3MAenlLWytEi3 
+[2024-10-31 05:49:09 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='1'&&password='c4ca4238a0b923820dcc509a6f75849b' 
+[2024-10-31 05:49:09 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 05:49:09 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:49:09 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:49:09 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:49:13 +08:00Z] [INFO] - 用户连接... 
+[2024-10-31 05:49:13 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:49:13 +08:00Z] [INFO] - SELECT * FROM files WHERE fileid='gFJ2NEpo49ECtZq-1yx6b' AND OWNER ='1' 
+[2024-10-31 05:49:13 +08:00Z] [DEBUG] - [status] 200 [msg] 文件查找成功 
+[2024-10-31 05:49:13 +08:00Z] [INFO] - 用户加入房间 gFJ2NEpo49ECtZq-1yx6b 
+[2024-10-31 05:50:29 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:50:29 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='2' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:50:29 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='2' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:50:29 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:53:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:53:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:53:01 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:53:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:54:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:54:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:54:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:54:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:54:44 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='1'&&password='c4ca4238a0b923820dcc509a6f75849b' 
+[2024-10-31 05:54:44 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 05:54:44 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:54:44 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:54:44 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:55:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:55:01 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:55:01 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:55:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:55:37 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='1'&&password='c4ca4238a0b923820dcc509a6f75849b' 
+[2024-10-31 05:55:37 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 05:55:37 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:55:37 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:55:37 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:56:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:56:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:56:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:56:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:56:55 +08:00Z] [INFO] - SELECT * FROM files WHERE state=1 AND  filename='1' AND filetype='word' AND filesuffix='docx' AND owner='1' 
+[2024-10-31 05:56:55 +08:00Z] [INFO] - INSERT INTO files(fileid,filename,filetype,filesuffix,owner) 
+         VALUES('JnEH8KM1y6ee-Y7REqE3M','1','word','docx','1') 
+[2024-10-31 05:56:55 +08:00Z] [DEBUG] - [status] 200 [msg] 文件创建成功 
+[2024-10-31 05:56:56 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 05:57:00 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 05:57:00 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:57:00 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:57:00 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:57:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:57:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:57:01 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 05:57:01 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:57:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:57:15 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 05:57:15 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 05:58:01 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:58:01 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:58:01 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 05:58:01 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:58:01 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:58:01 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:58:01 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:58:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:58:04 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 05:58:05 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 05:58:05 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:58:05 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:58:05 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:58:12 +08:00Z] [INFO] - SELECT * FROM files WHERE state=1 AND  filename='97' AND filetype='txt' AND filesuffix='txt' AND owner='1' 
+[2024-10-31 05:58:12 +08:00Z] [INFO] - INSERT INTO files(fileid,filename,filetype,filesuffix,owner) 
+         VALUES('K8ngu-gtAf8zv3jjXm6iS','97','txt','txt','1') 
+[2024-10-31 05:58:12 +08:00Z] [DEBUG] - [status] 200 [msg] 文件创建成功 
+[2024-10-31 05:58:18 +08:00Z] [INFO] - SELECT * FROM files WHERE state=1 AND  filename='1' AND filetype='excel' AND filesuffix='xlsx' AND owner='1' 
+[2024-10-31 05:58:18 +08:00Z] [INFO] - INSERT INTO files(fileid,filename,filetype,filesuffix,owner) 
+         VALUES('3smYkhrrGBTGOLm39paNH','1','excel','xlsx','1') 
+[2024-10-31 05:58:18 +08:00Z] [INFO] - INSERT INTO workbooks(gridKey,fileid) VALUES('D2ju12HbkdhkaywgcEowd','3smYkhrrGBTGOLm39paNH') 
+[2024-10-31 05:58:18 +08:00Z] [DEBUG] - [status] 200 [msg] 文件创建成功 
+[2024-10-31 05:58:19 +08:00Z] [INFO] - SELECT fl.filename title,wb.gridKey,wb.row,wb.column,wb.lang FROM files fl,workbooks wb WHERE fl.fileid= wb.fileid AND fl.fileid='3smYkhrrGBTGOLm39paNH' 
+[2024-10-31 05:58:19 +08:00Z] [DEBUG] - [status] 200 [msg] 获取Excel基础信息 
+[2024-10-31 05:58:19 +08:00Z] [INFO] - SELECT fl.filename title,wb.gridKey,wb.row,wb.column,wb.lang FROM files fl,workbooks wb WHERE fl.fileid= wb.fileid AND fl.fileid='3smYkhrrGBTGOLm39paNH' 
+[2024-10-31 05:58:19 +08:00Z] [INFO] - SELECT * FROM worksheets WHERE gridKey='D2ju12HbkdhkaywgcEowd' 
+[2024-10-31 05:58:19 +08:00Z] [INFO] - INSERT INTO worksheets VALUES('yLdNeTLvD4M91wCN-BUOI','D2ju12HbkdhkaywgcEowd','sheet 1',0,0,0,36,26,19,73) 
+[2024-10-31 05:58:19 +08:00Z] [INFO] - luckysheet 用户连接 
+[2024-10-31 05:58:53 +08:00Z] [INFO] - SELECT * FROM celldatas WHERE celldatas.index='Sheet_0lW5oLCWibCi_1730368699785' AND r=0 AND c=0 
+[2024-10-31 05:58:53 +08:00Z] [INFO] - INSERT INTO celldatas VALUES('SLBScb6l4ivdFBMPuochL','Sheet_0lW5oLCWibCi_1730368699785',0,0,
+    'General','n','11','11',
+    null, 
+    null,
+    null,
+    0,
+    0,
+    null,
+    0,
+    0,
+    0,
+    0,
+    0,
+    null) 
+[2024-10-31 05:59:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:59:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 05:59:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:59:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 05:59:19 +08:00Z] [ERROR] - incorrect header check 
+[2024-10-31 05:59:22 +08:00Z] [WARN] - luckysheet 协同用户关闭连接 
+[2024-10-31 05:59:22 +08:00Z] [INFO] - SELECT fl.filename title,wb.gridKey,wb.row,wb.column,wb.lang FROM files fl,workbooks wb WHERE fl.fileid= wb.fileid AND fl.fileid='3smYkhrrGBTGOLm39paNH' 
+[2024-10-31 05:59:22 +08:00Z] [DEBUG] - [status] 200 [msg] 获取Excel基础信息 
+[2024-10-31 05:59:22 +08:00Z] [INFO] - SELECT fl.filename title,wb.gridKey,wb.row,wb.column,wb.lang FROM files fl,workbooks wb WHERE fl.fileid= wb.fileid AND fl.fileid='3smYkhrrGBTGOLm39paNH' 
+[2024-10-31 05:59:22 +08:00Z] [INFO] - SELECT * FROM worksheets WHERE gridKey='D2ju12HbkdhkaywgcEowd' 
+[2024-10-31 05:59:22 +08:00Z] [INFO] - SELECT * FROM celldatas WHERE celldatas.index='yLdNeTLvD4M91wCN-BUOI' 
+[2024-10-31 05:59:22 +08:00Z] [INFO] - luckysheet 用户连接 
+[2024-10-31 05:59:25 +08:00Z] [WARN] - luckysheet 协同用户关闭连接 
+[2024-10-31 05:59:25 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:59:25 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:59:25 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:59:42 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='2' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 05:59:42 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='2' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 05:59:42 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 05:59:46 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='2' AND fl.fileid=fs.fileid 
+[2024-10-31 05:59:46 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 06:00:01 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 06:00:01 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 06:00:01 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 06:00:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 06:00:52 +08:00Z] [INFO] - SELECT * FROM users WHERE userid='2'&&password='c81e728d9d4c2f636f067f89cc14862c' 
+[2024-10-31 06:00:52 +08:00Z] [DEBUG] - [status] 200 [msg] 登录成功 
+[2024-10-31 06:00:54 +08:00Z] [INFO] - SELECT * FROM filestates WHERE fileid='JnEH8KM1y6ee-Y7REqE3M' AND editor='2' 
+[2024-10-31 06:00:54 +08:00Z] [INFO] - INSERT INTO filestates(fsid,fileid,editor) VALUES('K1UUaIMwK3aQTlBEN5dvb','JnEH8KM1y6ee-Y7REqE3M','2') 
+[2024-10-31 06:00:54 +08:00Z] [DEBUG] - [status] 200 [msg] 加入成功 
+[2024-10-31 06:00:54 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='2' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 06:00:54 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='2' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 06:00:54 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 06:00:56 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='2' AND fl.fileid=fs.fileid 
+[2024-10-31 06:00:56 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 06:01:02 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 06:01:17 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 06:01:30 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 06:01:30 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 06:01:30 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 06:01:30 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 06:01:32 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 06:01:34 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 06:01:34 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='2' AND fl.fileid=fs.fileid 
+[2024-10-31 06:01:34 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 06:01:40 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 06:01:43 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 06:01:43 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 06:01:44 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 06:01:44 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 06:01:45 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 06:01:45 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 06:01:46 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 06:01:46 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 06:01:46 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 06:01:46 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 06:01:47 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 06:01:47 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 06:01:51 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 06:01:51 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 06:01:51 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 06:01:51 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 06:01:52 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 06:02:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 06:02:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 06:02:01 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 06:02:01 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='1' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 06:02:01 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='1' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 06:02:01 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 06:02:01 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 06:02:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 06:02:02 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 06:03:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 06:03:01 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 06:03:59 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 06:03:59 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='2' AND fl.fileid=fs.fileid 
+[2024-10-31 06:03:59 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 06:04:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 06:04:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 06:04:01 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 06:04:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 06:04:55 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 06:04:55 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 06:04:57 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='2' AND ISNULL(fileownerfolderid) AND state='2 ORDER BY filetype' 
+[2024-10-31 06:04:57 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='2' AND state=2 AND ISNULL(parentfolderid) 
+[2024-10-31 06:04:57 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 06:04:59 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='2' AND fl.fileid=fs.fileid 
+[2024-10-31 06:04:59 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 06:05:00 +08:00Z] [INFO] - SELECT *  FROM filestates AS fs,files AS fl 
+    WHERE fs.editor='2' AND fl.fileid=fs.fileid 
+[2024-10-31 06:05:00 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 06:05:00 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 06:05:02 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 06:05:02 +08:00Z] [INFO] - SELECT * FROM files WHERE OWNER ='2' AND ISNULL(fileownerfolderid) AND state='1 ORDER BY filetype' 
+[2024-10-31 06:05:02 +08:00Z] [INFO] - SELECT * FROM folders WHERE OWNER ='2' AND state=1 AND ISNULL(parentfolderid) 
+[2024-10-31 06:05:02 +08:00Z] [DEBUG] - [status] 200 [msg] 查找成功 
+[2024-10-31 06:06:00 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 06:06:01 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 06:07:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 06:07:00 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 06:07:00 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 06:07:01 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 06:07:02 +08:00Z] [INFO] - yjs 客户端连接 
+[2024-10-31 06:07:02 +08:00Z] [INFO] - canvas-editor 客户端连接 
+[2024-10-31 06:07:07 +08:00Z] [WARN] - canvas-editor 用户关闭连接 
+[2024-10-31 06:07:11 +08:00Z] [WARN] - yjs 用户关闭连接 
+[2024-10-31 06:07:11 +08:00Z] [WARN] - yjs 用户关闭连接 
