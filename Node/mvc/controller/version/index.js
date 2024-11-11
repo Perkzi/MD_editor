@@ -13,16 +13,16 @@ exports.createVersion = async (req, res, next) => {
   //  mysql version(vid fileid content lasteditor)
   // 进入创建过程（先判断是否需要创建:指的是 files 表中 currenthead 字段是否有值）
   let findRes = await fileImpl.findFilesByFileidImpl(fileid);
-
+  
   if (findRes[0].currenthead) {
     /**
      *  1. 已经存在版本，则需要判断版本的创建时间与当前时间比较，是否超过版本控制时限
      *    超过：则创建新版本，同时，更新files 指向
      *    未超过：则只需要更新版本内容即可
      */
-    let overtime = 60 * 60 * 10; // 定义超时时间 10分钟
+    // 
+    let overtime = 60 * 30 * 1; // 定义超时时间 1分钟
     // let overtime = 60; // 测试模拟超过情况
-
     // 查找版本信息
     let versionRes = await versionImpl.findVersionImpl(findRes[0].currenthead);
     // 判断时间是否超过时限
