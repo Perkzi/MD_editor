@@ -13,7 +13,6 @@ exports.createVersion = async (req, res, next) => {
   //  mysql version(vid fileid content lasteditor)
   // 进入创建过程（先判断是否需要创建:指的是 files 表中 currenthead 字段是否有值）
   let findRes = await fileImpl.findFilesByFileidImpl(fileid);
-  
   if (findRes[0].currenthead) {
     /**
      *  1. 已经存在版本，则需要判断版本的创建时间与当前时间比较，是否超过版本控制时限
@@ -21,7 +20,7 @@ exports.createVersion = async (req, res, next) => {
      *    未超过：则只需要更新版本内容即可
      */
     // 
-    let overtime = 60 * 30 * 1; // 定义超时时间 1分钟
+    let overtime =  30 * 1; // 定义超时时间 30 seconds
     // let overtime = 60; // 测试模拟超过情况
     // 查找版本信息
     let versionRes = await versionImpl.findVersionImpl(findRes[0].currenthead);
@@ -65,4 +64,20 @@ exports.createVersion = async (req, res, next) => {
   if (!createRes.affectedRows) return httpCode(res, 6001);
   req.version = { vid, vfileid: fileid }; // 娶个别名，不然下一个中间件命名冲突
   next(); // 进入更新文件信息
+};
+
+
+exports.getVersion = async (req, res) => {
+  let { userid, fileid } = req.body;
+  if (!userid || !fileid) return httpCode(res); // 参数缺失
+
+  // 必须有至少一个版本才能查询
+  let findRes = await fileImpl.findFilesByFileidImpl(fileid);
+  if (findRes[0].currenthead) {
+    let versionRes = await versionImpl.getVersionHistoryImpl(fileid);
+    versionRes.sort((a, b) => b.index - a.index);
+
+    logger.info(versionRes);
+    return httpCode(res,200,"查询成功",versionRes);
+  }
 };

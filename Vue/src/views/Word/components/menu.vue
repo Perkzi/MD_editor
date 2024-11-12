@@ -179,7 +179,10 @@ let titleLevelValue = ref("none");
 async function share() {
   // 获取当前文件的信息  username, fileid, filename
   let { username, userid } = JSON.parse(sessionStorage.getItem("user"));
-  let fileid = window.location.hash.split("word/")[1]; // 当前文件的fileid
+  let fileid = new URLSearchParams(window.location.search).get('fileid');
+  if (!fileid) {
+    fileid = window.location.hash.split('/edit/')[1]?.split('?')[0];
+  }
   // 通过fileid 请求文件信息
   let { data } = await getFilesByFileId_API({ userid, fileid });
   let { filename, filesuffix } = data;

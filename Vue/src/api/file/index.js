@@ -107,3 +107,12 @@ export const exportFile_API = (data) => {
     data,
   });
 };
+
+// 历史版本信息
+export const getHistryoByFielId_API=(data)=>{
+  return fetch({
+    url: "/version/getVersion",
+    method: "post",
+    data,
+  });
+}

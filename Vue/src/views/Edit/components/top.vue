@@ -37,7 +37,7 @@
       </div>
 
       <!-- 历史 -->
-      <div class="header-right-history" title="历史记录">
+      <div class="header-right-history" title="历史记录" @click="historyClick">
         <i class="iconfont icon-lishi"></i>
       </div>
 
@@ -55,16 +55,8 @@
 
       <!-- 我的头像 -->
       <div class="header-right-userimg" title="我的信息">
-        <div
-          class="userimg_svg"
-          v-if="userinfo.usersvg"
-          v-html="userinfo.usersvg"
-        />
-        <el-avatar
-          v-else
-          shape="square"
-          src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-        />
+        <div class="userimg_svg" v-if="userinfo.usersvg" v-html="userinfo.usersvg" />
+        <el-avatar v-else shape="square" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
       </div>
     </div>
   </div>
@@ -76,7 +68,7 @@ import { ElMessage } from "element-plus";
 import userListVue from "./userList.vue";
 import { execcontent } from "@/util/execcontent";
 import { createShearUrl } from "@/util/share";
-import { getFilesByFileId_API } from "@/api/file";
+import { getFilesByFileId_API,getHistryoByFielId_API } from "@/api/file";
 
 import router from "@/router";
 import store from "@/store";
@@ -128,6 +120,16 @@ const favorClick = () => {
   else ElMessage.success("已取消");
 };
 
+const historyClick = async () => {
+  let fileid = new URLSearchParams(window.location.search).get('fileid');
+  if (!fileid) {
+    fileid = window.location.hash.split('/edit/')[1]?.split('?')[0];
+  }
+  let {data} = await getHistryoByFielId_API({fileid});
+  console.log("Version history",data);
+  //TODO: 打开历史记录
+}
+
 // 返回首页
 const toBack = () => {
   // 实现关闭 websocket
@@ -139,7 +141,10 @@ const toBack = () => {
 onMounted(async () => {
   // 请求文件
   let { username, userid } = JSON.parse(sessionStorage.getItem("user"));
-  let fileid = window.location.hash.split("edit/")[1]; // 当前文件的fileid
+  let fileid = new URLSearchParams(window.location.search).get('fileid');
+  if (!fileid) {
+    fileid = window.location.hash.split('/edit/')[1]?.split('?')[0];
+  }
   // 通过fileid 请求文件信息
   let { data } = await getFilesByFileId_API({ userid, fileid });
 
@@ -160,18 +165,22 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   // border: solid red 1px;
-  & > div {
+  &>div {
     display: flex;
     align-items: center;
   }
+
   &-left {
     &-home {
       cursor: pointer;
     }
-    & > div {
+
+    &>div {
       margin: 0 5px;
     }
+
     &-filename {
       font-weight: 700;
       width: auto;
@@ -180,18 +189,22 @@ onMounted(async () => {
       white-space: nowrap;
       text-overflow: ellipsis;
     }
+
     &-favor {
       cursor: pointer;
     }
+
     &-news {
-      & > span {
+      &>span {
         font-size: 12px;
         color: #ccc;
       }
+
       .newUserName {
         font-style: italic;
         margin: 0 2px;
         cursor: pointer;
+
         &:hover {
           border-bottom: solid var(--main-color) 1px;
         }
@@ -200,15 +213,17 @@ onMounted(async () => {
   }
 
   &-right {
-    & > div {
+    &>div {
       margin: 0 10px;
       cursor: pointer;
     }
+
     &-userlist {
       display: flex;
       align-items: center;
       // border-right: solid var(--main-color) 1px;
     }
+
     &-userimg {
       /deep/.el-avatar {
         cursor: pointer;

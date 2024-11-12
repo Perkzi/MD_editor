@@ -15,5 +15,6 @@ const { versionCtrl, fileCtrl } = require("../../mvc/controller");
 
 // 更新版本(有一定的时间周期,不然一个文件会有很多版本)
 router.post("/updateVersion", versionCtrl.createVersion, fileCtrl.updateFiles);
-
+// 返回历史记录
+router.post("/getVersion", versionCtrl.getVersion);
 exports.versionRouter = router;

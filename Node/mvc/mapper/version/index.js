@@ -13,3 +13,7 @@ exports.updateVersionMap = async (vid, content, fileid) =>
   await query(
     `UPDATE versions SET content='${content}' WHERE fileid='${fileid}' AND vid='${vid}'`
   );
+
+
+exports.getVersionHistoryMap = async (fileid) =>
+  await query(`SELECT * FROM versions WHERE fileid='${fileid}'`);
