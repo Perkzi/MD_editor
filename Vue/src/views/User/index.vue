@@ -12,7 +12,7 @@
       <img src="./avatar.jpg" alt="" v-else />
       <div>
         <p class="username">{{ user.username }}</p>
-        <p>
+        <!-- <p>
           <img src="./1.png" alt="" />
           <img src="./2.png" alt="" />
           <img src="./3.png" alt="" />
@@ -23,11 +23,11 @@
         <div class="VIP">
           <i class="vip-icon"></i
           ><span>文档超级会员，100+尊享特权-超大空间-海量资源</span>
-        </div>
+        </div> -->
       </div>
     </div>
 
-    <div class="user-more">
+    <!-- <div class="user-more">
       <div>
         <p>账户余额</p>
         <p>xxx</p>
@@ -46,7 +46,7 @@
         <p>xxx</p>
         <p>xxx</p>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

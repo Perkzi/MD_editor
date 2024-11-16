@@ -112,7 +112,7 @@ const commandhandle = (command) => {
       break;
 
     case "gitee":
-      window.open("https://gitee.com/wfeng0/mpoe");
+      window.open("https://github.com/heeler-deer/SEMD");
       break;
     case "setting":
       settingsOption.show = true;

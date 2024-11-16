@@ -29,10 +29,10 @@ export const menuList = [
     color: "#1296db",
     command: "markdown",
   },
-  {
-    name: "导入本地文件",
-    command: "inputfile",
-  },
+  // {
+  //   name: "导入本地文件",
+  //   command: "inputfile",
+  // },
   {
     name: "更多类型",
     command: "more",

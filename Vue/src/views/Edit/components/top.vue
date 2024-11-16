@@ -28,7 +28,7 @@
     <div class="header-right">
       <!-- 正在查看的人员列表 -->
       <div class="header-right-userlist" title="正在编辑的人">
-        <userListVue :userList="socketuserlist" @command="commandhandle" />
+        <userListVue :userList="socketuserlist" @command="commandhandleuser" />
       </div>
 
       <!-- markdown -->
@@ -38,7 +38,9 @@
 
       <!-- 历史 -->
       <div class="header-right-history" title="历史记录" @click="historyClick">
-        <i class="iconfont icon-lishi"></i>
+        <i class="iconfont icon-lishi">
+          <historyVue :versionList="sockethistorylist" @command="commandhandlehistory" />
+        </i>
       </div>
 
       <!-- 消息：打开抽屉实现 -->
@@ -66,9 +68,10 @@
 import { onMounted, reactive, ref } from "vue";
 import { ElMessage } from "element-plus";
 import userListVue from "./userList.vue";
+import historyVue from "./history.vue";
 import { execcontent } from "@/util/execcontent";
 import { createShearUrl } from "@/util/share";
-import { getFilesByFileId_API,getHistryoByFielId_API } from "@/api/file";
+import { getFilesByFileId_API, getHistryoByFielId_API } from "@/api/file";
 
 import router from "@/router";
 import store from "@/store";
@@ -83,7 +86,7 @@ let { socketuserlist, unread } = defineProps({
   },
   unread: { type: Number, default: 0 },
 });
-
+const sockethistorylist = ref([]); // 历史记录数据
 // 当前编辑的文件名称
 let filename = ref("");
 let userinfo = reactive({
@@ -91,15 +94,18 @@ let userinfo = reactive({
   userimg: "",
   username: "",
 });
-const newUser = "追风少年";
+
 
 const favor = ref(false);
-const editType = ref("text"); // 标记编辑器类型 text 或者 markdown
+const editType = ref("markdown"); // 标记编辑器类型 text 或者 markdown
 
 // 点击选项回调
-const commandhandle = (command) => {
+const commandhandleuser = (command) => {
   // console.log("点击了", command);
 };
+const commandhandlehistory = (command) => {
+  // console.log("点击了", command);
+}
 async function share() {
   // 创建分享链接
   // 获取当前文件的信息  username, fileid, filename
@@ -125,10 +131,17 @@ const historyClick = async () => {
   if (!fileid) {
     fileid = window.location.hash.split('/edit/')[1]?.split('?')[0];
   }
-  let {data} = await getHistryoByFielId_API({fileid});
-  console.log("Version history",data);
-  //TODO: 打开历史记录
-}
+
+  try {
+    const { data } = await getHistryoByFielId_API({ fileid });
+    const dataArray = Object.keys(data).map((key) => data[key]);
+    console.log("Version history (array format)", dataArray);
+    sockethistorylist.value = dataArray; // Vue 响应式更新
+  } catch (error) {
+    console.error("Failed to fetch version history:", error);
+  }
+};
+
 
 // 返回首页
 const toBack = () => {
@@ -141,6 +154,7 @@ const toBack = () => {
 onMounted(async () => {
   // 请求文件
   let { username, userid } = JSON.parse(sessionStorage.getItem("user"));
+  let newUser = username;
   let fileid = new URLSearchParams(window.location.search).get('fileid');
   if (!fileid) {
     fileid = window.location.hash.split('/edit/')[1]?.split('?')[0];
@@ -219,6 +233,12 @@ onMounted(async () => {
     }
 
     &-userlist {
+      display: flex;
+      align-items: center;
+      // border-right: solid var(--main-color) 1px;
+    }
+
+    &-historylist {
       display: flex;
       align-items: center;
       // border-right: solid var(--main-color) 1px;

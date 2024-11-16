@@ -32,7 +32,7 @@
       </el-input>
     </el-form-item>
 
-    <el-form-item prop="checkpass">
+    <!-- <el-form-item prop="checkpass">
       <el-input
         placeholder="请输入密码"
         type="password"
@@ -44,7 +44,7 @@
           <el-icon><Lock /></el-icon>
         </template>
       </el-input>
-    </el-form-item>
+    </el-form-item> -->
 
     <!-- 验证码 -->
     <!-- <el-form-item prop="userid">
@@ -98,8 +98,8 @@ const loginForm = reactive({
   loading: false, // 是否处于加载中
   userid: "", // 账号
   password: "", // 密码
-  checkpass: "", // 密码
-  remember: false, // 记住账号
+  // checkpass: "", // 密码
+  remember: true, // 记住账号
 });
 
 const loginFormRef = ref(null);
