@@ -3,6 +3,8 @@ const { httpCode, getNanoid } = require("../../../util");
 const { fileImpl } = require("../../serviceImpl");
 const dayjs = require("dayjs");
 const path = require("path");
+
+const fs = require('fs');
 // 创建文件
 exports.createFile = async (req, res, next) => {
   /**
@@ -198,6 +200,40 @@ exports.getFileContent = async (req, res, next) => {
     return httpCode(res, 200, "查找成功", findRes[0].content);
   return httpCode(res, 6003);
 };
+
+// 导出文件
+exports.exportFile = async (req, res, next) => {
+  let { fileid, userid } = req.body;
+  // 输出接收到的请求体
+  console.log("Received request to export file:", req.body);
+  
+  if (!fileid || !userid) return httpCode(res); // 参数缺失
+
+  // 检查用户是否拥有该文件
+  if (!await isOwnerFile(fileid, userid)) return httpCode(res, 7003); // 无权限导出
+
+  // 查找文件信息
+   // 查找文件信息
+   let fileRes = await fileImpl.findFileByIdImpl(userid, fileid);
+   if (!fileRes || fileRes.length === 0) return httpCode(res, 4003); // 文件不存在
+ 
+   // 获取文件内容
+   let contentRes = await fileImpl.getFileContentImpl(fileid);
+   let fileContent = contentRes[0]?.content; // 假设内容在 content 字段中
+   console.log("fileContent:", fileContent); // 打印文件内容
+   if (fileContent==undefined) return httpCode(res, 4004); // 文件内容为空
+
+  // 定义文件名和路径
+  const fileName = `${fileRes[0].filename}.${fileRes[0].filesuffix}`;
+  res.setHeader('Content-Disposition', `attachment; filename="${fileName}"`); 
+  res.setHeader('Content-Type', 'application/octet-stream');
+  res.setHeader('X-File-Name', fileName); // 添加自定义响应头传递文件名
+
+  res.json({ fileName, fileContent });
+  // 返回文件内容
+  //return httpCode(res, 200, "文件导出成功", { fileid, content: fileContent });
+};
+
 
 // 辅助函数
 const findFilesByFilename = async (

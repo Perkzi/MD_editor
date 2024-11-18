@@ -38,6 +38,18 @@ exports.httpCode = (res, code, msg, data) => {
       msg: "已存在同名文件",
     },
     {
+      code: 4003,
+      msg: "文件不存在",
+    },
+    {
+      code: 4004,
+      msg: "文件内容为空",
+    },
+    {
+      code: 4005,
+      msg: "文件下载失败",
+    },
+    {
       code: 5001,
       msg: "加入文件编辑失败",
     },
@@ -64,6 +76,10 @@ exports.httpCode = (res, code, msg, data) => {
     {
       code: 7002,
       msg: "操作失败",
+    },
+    {
+      code: 7003,
+      msg: "无导出权限",
     },
   ];
 

@@ -98,14 +98,45 @@ export const putFileToRecycle_API = (data) => {
 };
 // 删除文件
 
-// 文件的导入
-export const exportFile_API = (data) => {
+// excel文件的导入
+export const uploadFile_API = (data) => {
   return fetch({
     url: "/excel/uploadFile",
     method: "post",
     "Content-Type": "multipart/form-data",
     data,
   });
+};
+
+// 导出文件
+export const exportFile_API = (data) => {
+  return fetch({
+    url: "/file/exportFile", // 假设这个接口是用于导出文件的
+    method: "post",
+    data,
+    //responseType: 'blob' 
+    responseType: 'json' 
+  }).then(response =>{ 
+    console.log(response);
+    console.log(typeof response);
+    //console.log(response.json());
+    return response;
+    }) 
+  .then(({ fileName, fileContent }) => {
+      const blob = new Blob([fileContent],{ type: 'text/plain' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = fileName; // 你可以根据需要设置文件名 
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      return { code: 200, msg: '文件下载成功' }; // 返回成功信息
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      return { code: 500, msg: '文件下载失败' }; // 返回错误信息 
+    });
 };
 
 // 历史版本信息

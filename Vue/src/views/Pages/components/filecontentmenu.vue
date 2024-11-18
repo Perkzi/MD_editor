@@ -53,9 +53,9 @@ let menuList = reactive([
     icon: "icon-yidong",
   },
   {
-    name: "360压缩",
-    icon: "icon-yasuobao",
-    color: "#51BDF4",
+    name: "导出",
+    icon: "icon-daochu",
+    command: "export",
   },
 ]);
 
@@ -123,6 +123,22 @@ const contentmenuClick = async (e, command) => {
     // 重命名
     case "rename":
       return emit("rename", activeItem.value);
+
+    // 导出文件
+    case "export":
+      if (!chooseFile.fileid) return;
+      try {
+        let { code, msg } = await exportFile_API({
+          fileid: chooseFile.fileid,
+          userid,
+        });
+        if (code !== 200) return ElMessage.error(msg);
+        ElMessage.success("文件导出成功");
+      } catch (error) {
+        console.log(error);
+        ElMessage.error("导出文件失败");
+      }
+      return;
 
     default:
       break;
