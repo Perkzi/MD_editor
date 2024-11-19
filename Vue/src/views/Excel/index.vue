@@ -46,7 +46,7 @@ import { onMounted, ref } from "vue";
 import { getExcelInfo_API } from "@/api/univer";
 import router from "@/router";
 // 做文件导入
-import { exportFile_API } from "@/api/file";
+import { uploadFile_API } from "@/api/file";
 // 文件导出
 import { exportExcel } from "@/util/downloadFile";
 import { ElMessage } from "element-plus";
@@ -72,7 +72,7 @@ const importFileHandle = (e) => {
   console.log("文件导入");
   let formData = new FormData();
   formData.append("file", e.target.files[0]);
-  exportFile_API(formData).then(({ data }) => {
+  uploadFile_API(formData).then(({ data }) => {
     let { info, sheets } = data;
     console.log(info.name);
     // luckysheet.setWorkbookName(info.name.toString());

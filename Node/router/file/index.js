@@ -38,4 +38,7 @@ router.post("/putFileToRecycle", fileCtrl.putFileToRecycle);
 // 删除文件
 router.post("/deleteFile", fileCtrl.deleteFile);
 
+// 导出文件
+router.post("/exportFile", fileCtrl.exportFile);
+
 exports.fileRouter = router;
