@@ -28,7 +28,7 @@ import { reactive, defineExpose, ref } from "vue";
 import { ElMessage, ElMessageBox } from "element-plus";
 import { createShearUrl } from "@/util/share";
 import { execcontent } from "@/util/execcontent";
-import { putFileToRecycle_API } from "@/api/file";
+import { putFileToRecycle_API, exportFile_API } from "@/api/file";
 
 const emit = defineEmits(["putFileToRecycle", "rename"]);
 

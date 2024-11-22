@@ -13,7 +13,7 @@ const sql_config = {
   host: "127.0.0.1",
   database: "mpoe",
   user: "root",
-  //password: "root",
+  //password: "1234",
   password: "kwnz7kwkwsUuHv2NLC3q",
 };
 
