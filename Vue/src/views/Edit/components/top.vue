@@ -134,6 +134,7 @@ const historyClick = async () => {
 
   try {
     const { data } = await getHistryoByFielId_API({ fileid });
+    console.log(data);
     const dataArray = Object.keys(data).map((key) => data[key]);
     console.log("Version history (array format)", dataArray);
     sockethistorylist.value = dataArray; // Vue 响应式更新
