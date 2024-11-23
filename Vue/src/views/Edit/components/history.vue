@@ -10,10 +10,10 @@
                     </div>
                 </div>
 
-                <el-avatar v-if="versionList.length > 3" class="allVersion" shape="square"
+                <!-- <el-avatar v-if="versionList.length > 3" class="allVersion" shape="square"
                     :style="{ transform: `translateX(${versionList.length > 3 ? -30 : versionList.length * -10}px)` }">
                     {{ versionList.length }}
-                </el-avatar>
+                </el-avatar> -->
             </div>
         </template>
     </dropdown>
