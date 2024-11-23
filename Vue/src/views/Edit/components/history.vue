@@ -2,7 +2,7 @@
     <dropdown :list="versionList" @command="commandhandle">
         <template #content>
             <div class="list">
-                <div v-for="(version, index) in versionList.slice(0, 3)" :key="index">
+                <div v-for="(version, index) in versionList.slice(0, 5)" :key="index">
           <!-- :style="{ transform: `translateX(${getTranslate(index)}px)` }" class="version-item">  -->
                     <div class="version-card"  @click="changeVid(version.fileid)">
                         <h4>版本号: {{ version.index }}</h4>
@@ -10,10 +10,10 @@
                     </div>
                 </div>
 
-                <el-avatar v-if="versionList.length > 3" class="allVersion" shape="square"
+                <!-- <el-avatar v-if="versionList.length > 3" class="allVersion" shape="square"
                     :style="{ transform: `translateX(${versionList.length > 3 ? -30 : versionList.length * -10}px)` }">
                     {{ versionList.length }}
-                </el-avatar>
+                </el-avatar> -->
             </div>
         </template>
     </dropdown>
