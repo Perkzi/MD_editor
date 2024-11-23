@@ -125,7 +125,9 @@ const iconClick = (icon) => {
       // 调用接口实现数据保存
       saveFile(JSON.stringify(quill.getDetail()));
       break;
-
+    case "icon-daochu":
+      quill.format(icon);
+      break;
     // 文件上传
     case "icon-tupian":
       uploadRef.value.click();

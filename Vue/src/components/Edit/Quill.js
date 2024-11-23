@@ -4,6 +4,7 @@ import QuillCursors from "quill-cursors";
 import "quill/dist/quill.snow.css"; // 使用了 snow 主题色
 import { entitiestoUtf16 } from "@/util/utf16";
 import { ElMessage } from "element-plus";
+import { jsPDF } from "jspdf";
 export class myQuill {
   constructor(selector) {
     // 使用 cursors 插件
@@ -14,6 +15,7 @@ export class myQuill {
       modules: {
         cursors: true, // 开启插件
       },
+      
       // theme: "snow", // 是否启用工具栏
       placeholder: "请输入内容...",
     });
@@ -72,6 +74,7 @@ export class myQuill {
     // "icon-strikethrough": strike,
     // "icon-zitixiahuaxian": underline,
     // "icon-zitiyanse": color,
+    // "icon-daochu": daochu
     // 拿到用户操作的映射,判断有没有当前属性,没有则添加,有,则删除
     if (opt === "icon-cuti")
       this.quill.formatText(index, length, "bold", !bold);
@@ -82,11 +85,41 @@ export class myQuill {
     if (opt === "icon-zitixiahuaxian")
       this.quill.formatText(index, length, "underline", !underline);
     if (opt === "color") this.quill.formatText(index, length, "color", color);
+    if (opt === "icon-daochu") this.exportPdf();
   }
 
   // 添加嵌入式内容
   insertEmbed(index, type, value) {
     this.quill.insertEmbed(index || this.getCurrentCursor(), type, value);
+  }
+
+  //导出按钮
+  exportPdf(customFileName = "document.pdf", scale = 2) {
+    const editorElement = this.quill.root; 
+    html2canvas(editorElement, {
+      scale: Math.min(scale * 2, 5),
+      useCORS: true,
+      width: editorElement.offsetWidth * scale,
+      height: editorElement.offsetHeight * scale,
+    })
+    .then((canvas) => {
+      const imgData = canvas.toDataURL("image/png", 1.0);
+      const pdf = new jsPDF({
+        orientation: "portrait",
+        unit: "mm",
+        dpi:2000,
+        compress: true,
+      });
+      const imgWidth = canvas.width/2; 
+      const imgHeight = canvas.height/2; 
+
+  
+      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+      pdf.save(customFileName);
+    })
+    .catch((error) => {
+      console.error("Error generating PDF:", error);
+    });
   }
 
   // 获取当前编辑器的 detail 数据格式

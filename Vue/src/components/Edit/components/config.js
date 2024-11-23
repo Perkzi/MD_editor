@@ -8,11 +8,13 @@ export const tabbarConfig = [
     { icon: "icon-italic", title: "斜体" },
     { icon: "icon-strikethrough", title: "删除线" },
     { icon: "icon-zitixiahuaxian", title: "下划线" },
+    
   ],
   [
     { icon: "icon-anjianfengexian", title: "" },
     { icon: "icon-tupian", title: "插入图片" },
-    { icon: "icon-baocun", title: "每10分钟自动保存" },
+    { icon: "icon-baocun", title: "每30秒自动保存" },
+    {icon: "icon-daochu",title:"导出为pdf"},
   ],
   [{ icon: "icon-24gl-fullScreenEnter2", title: "进入全屏" }],
 ];
