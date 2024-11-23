@@ -213,15 +213,24 @@ exports.exportFile = async (req, res, next) => {
   if (!await isOwnerFile(fileid, userid)) return httpCode(res, 7003); // 无权限导出
 
   // 查找文件信息
-   // 查找文件信息
-   let fileRes = await fileImpl.findFileByIdImpl(userid, fileid);
-   if (!fileRes || fileRes.length === 0) return httpCode(res, 4003); // 文件不存在
- 
-   // 获取文件内容
-   let contentRes = await fileImpl.getFileContentImpl(fileid);
-   let fileContent = contentRes[0]?.content; // 假设内容在 content 字段中
-   console.log("fileContent:", fileContent); // 打印文件内容
-   if (fileContent==undefined) return httpCode(res, 4004); // 文件内容为空
+  // 查找文件信息
+  let fileRes = await fileImpl.findFileByIdImpl(userid, fileid);
+  if (!fileRes || fileRes.length === 0) return httpCode(res, 4003); // 文件不存在
+
+  // 获取文件内容
+  let contentRes = await fileImpl.getFileContentImpl(fileid);
+  let fileContent = contentRes[0]?.content; // 假设内容在 content 字段中
+  console.log("fileContent:", fileContent); // 打印文件内容
+  if (fileContent==undefined) return httpCode(res, 4004); // 文件内容为空
+
+  // md txt xlsx docx folder
+  console.log("suffix",fileRes[0].filesuffix)
+  if (fileRes[0].filesuffix=='md'){
+    // 将 JSON 内容转换为 Markdown 格式
+    fileContent = convertToMarkdown(fileContent);
+    if (!fileContent) return httpCode(res, 4005, "文件内容格式错误,md字符串无法解析为数组"); // 处理解析错误
+    //console.log("new fileContent",fileContent)
+  }
 
   // 定义文件名和路径
   const fileName = `${fileRes[0].filename}.${fileRes[0].filesuffix}`;
@@ -267,3 +276,29 @@ const isOwnerFile = async (fileid, userid) => {
   let findRes = await fileImpl.findFilesByFileidImpl(fileid);
   return findRes[0].owner == userid;
 };
+
+// 将内容转换为 Markdown 格式的函数
+function convertToMarkdown(content) {
+  // 将字符串解析为数组
+  let contentArray;
+  try {
+    //console.log(typeof content);
+    content = content.replace(/\n/g, '<br>');
+    contentArray = JSON.parse(content); // 解析 JSON 字符串
+  } catch (error) {
+    console.log(error);
+    return
+  }
+  let markdown = '';
+
+  contentArray.forEach(item => {
+    if (item.attributes && item.attributes.italic) {
+      markdown += `*${item.insert}*`; // 处理斜体
+    } else {
+      markdown += item.insert; // 普通文本
+    }
+  });
+
+  markdown = markdown.replace(/<br>/g, '\n');
+  return markdown;
+}
