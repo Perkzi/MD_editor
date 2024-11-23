@@ -20,11 +20,14 @@
       <div class="header-left-news">
         <i class="iconfont icon-oko"></i>
         <span>
-          上次修改是
-          <span class="newUserName">{{ newUser }}</span> 在15分钟前进行的
+          上次修改:
+          <span class="newUserName">{{ newUser }}</span>  1分钟前 
         </span>
       </div>
     </div>
+
+    
+
     <div class="header-right">
       <!-- 正在查看的人员列表 -->
       <div class="header-right-userlist" title="正在编辑的人">
@@ -38,11 +41,13 @@
 
       <!-- 历史 -->
       <div class="header-right-history" title="历史记录" @click="historyClick">
-        <i class="iconfont icon-lishi">
-          <historyVue :versionList="sockethistorylist" @command="commandhandlehistory" />
-        </i>
+        <div class="icon-container">
+          <i class="iconfont icon-lishi"></i>
+        </div>
       </div>
-
+      <div v-if="showHistory" class="history-list">
+        <historyVue :versionList="sockethistorylist" @command="commandhandlehistory"/>
+      </div>
       <!-- 消息：打开抽屉实现 -->
       <div class="header-right-setting" title="消息" @click="open">
         <el-badge :value="unread || ''" class="item">
@@ -71,7 +76,7 @@ import userListVue from "./userList.vue";
 import historyVue from "./history.vue";
 import { execcontent } from "@/util/execcontent";
 import { createShearUrl } from "@/util/share";
-import { getFilesByFileId_API, getHistryoByFielId_API } from "@/api/file";
+import { getFilesByFileId_API, getHistryoByFielId_API, getHistryoByVId_API } from "@/api/file";
 
 import router from "@/router";
 import store from "@/store";
@@ -104,7 +109,7 @@ const commandhandleuser = (command) => {
   // console.log("点击了", command);
 };
 const commandhandlehistory = (command) => {
-  // console.log("点击了", command);
+  console.log("点击了history", command);
 }
 async function share() {
   // 创建分享链接
@@ -126,15 +131,21 @@ const favorClick = () => {
   else ElMessage.success("已取消");
 };
 
-const historyClick = async () => {
+const showHistory = ref(false); // 控制历史记录的显示
+
+const historyClick = async (event) => {
+  showHistory.value = !showHistory.value; // 切换历史记录的显示状态
+  event.stopPropagation(); // 阻止事件冒泡
+
   let fileid = new URLSearchParams(window.location.search).get('fileid');
+  
   if (!fileid) {
     fileid = window.location.hash.split('/edit/')[1]?.split('?')[0];
   }
-
+  //console.log("fileid",fileid)
   try {
     const { data } = await getHistryoByFielId_API({ fileid });
-    console.log(data);
+    //console.log("data",data);
     const dataArray = Object.keys(data).map((key) => data[key]);
     console.log("Version history (array format)", dataArray);
     sockethistorylist.value = dataArray; // Vue 响应式更新
@@ -143,6 +154,16 @@ const historyClick = async () => {
   }
 };
 
+/* const vid = ref("");
+const updateVid = (newVid) =>{
+  vid.value = newVid;
+}
+// 监听 vid 的变化
+watch(vid, async (newVid) => {
+  if (newVid) {
+    const { data } = await getHistryoByVId_API(newVid); // 调用 API 获取文件信息
+  }
+}); */
 
 // 返回首页
 const toBack = () => {
@@ -152,10 +173,11 @@ const toBack = () => {
   router.push("/home/pages");
 };
 
+let newUser = null
 onMounted(async () => {
   // 请求文件
   let { username, userid } = JSON.parse(sessionStorage.getItem("user"));
-  let newUser = username;
+  newUser = username;
   let fileid = new URLSearchParams(window.location.search).get('fileid');
   if (!fileid) {
     fileid = window.location.hash.split('/edit/')[1]?.split('?')[0];
@@ -178,13 +200,16 @@ onMounted(async () => {
 .header {
   height: 50px;
   display: flex;
-  align-items: center;
+  //align-items: center;
+  align-items: flex-start;
+  padding: 15px 0px 0px 0px;
   justify-content: space-between;
 
   // border: solid red 1px;
   &>div {
     display: flex;
-    align-items: center;
+    //align-items: center;
+    align-items: flex-start;
   }
 
   &-left {
@@ -236,12 +261,14 @@ onMounted(async () => {
     &-userlist {
       display: flex;
       align-items: center;
+      //align-items: flex-start; /* 修改为 flex-start 以实现顶端对齐 */
       // border-right: solid var(--main-color) 1px;
     }
 
     &-historylist {
       display: flex;
       align-items: center;
+      //align-items: flex-start; /* 修改为 flex-start 以实现顶端对齐 */
       // border-right: solid var(--main-color) 1px;
     }
 
@@ -255,4 +282,29 @@ onMounted(async () => {
     }
   }
 }
+
+.header-right-history {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    //align-items: flex-start; 
+}
+
+.icon-container {
+    display: flex;
+    align-items: center; 
+    //align-items: flex-start; 
+}
+
+.iconfont {
+    font-size: 24px; 
+    align-items: center;
+    
+}
+
+.history-list {
+  align-items: center;
+  margin-top: 5px; 
+} 
+
 </style>

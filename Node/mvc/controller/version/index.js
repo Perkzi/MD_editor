@@ -81,3 +81,16 @@ exports.getVersion = async (req, res) => {
     return httpCode(res,200,"查询成功",versionRes);
   }
 };
+
+exports.getSpecificVersion = async (req, res) => {
+  let { userid, vid } = req.body;
+  if (!userid || !vid) return httpCode(res); // 参数缺失
+
+  if (findRes[0].currenthead) {
+    let versionRes = await versionImpl.findVersionImpl(vid);
+    versionRes.sort((a, b) => b.index - a.index);
+
+    logger.info(versionRes);
+    return httpCode(res,200,"查询成功",versionRes);
+  }
+};
