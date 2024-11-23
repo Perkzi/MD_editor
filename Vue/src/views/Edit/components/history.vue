@@ -2,7 +2,7 @@
     <dropdown :list="versionList" @command="commandhandle">
         <template #content>
             <div class="list">
-                <div v-for="(version, index) in versionList.slice(0, 3)" :key="index">
+                <div v-for="(version, index) in versionList.slice(0, 5)" :key="index">
           <!-- :style="{ transform: `translateX(${getTranslate(index)}px)` }" class="version-item">  -->
                     <div class="version-card"  @click="changeVid(version.fileid)">
                         <h4>版本号: {{ version.index }}</h4>
