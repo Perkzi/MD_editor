@@ -294,7 +294,17 @@ function convertToMarkdown(content) {
   contentArray.forEach(item => {
     if (item.attributes && item.attributes.italic) {
       markdown += `*${item.insert}*`; // 处理斜体
-    } else {
+    } else if (item.insert.startsWith('#image#data:image/')) {
+      // 处理 Base64 图像
+      const base64Image = item.insert.split('#image#')[1]; // 提取 Base64 字符串
+      //const mimeType = base64Image.startsWith('iVBORw0KGgo') ? 'image/png' : 'image/jpeg'; // 可根据需要调整
+      markdown += `![Image](${base64Image})`; // 使用 Markdown 语法插入图像，并添加换行
+    }else if (item.insert.startsWith('#image#')) {
+      // 处理网络图像或本地图像
+      const imageUrl = item.insert.split('#image#')[1]; // 提取 URL
+      markdown += `![Image](${imageUrl})\n`; // 使用 Markdown 语法插入图像，并添加换行
+    }
+    else {
       markdown += item.insert; // 普通文本
     }
   });
