@@ -5,7 +5,7 @@
       @selection-change="handleSelectionChange"
     >
       <el-table-column type="selection" width="55" />
-      <el-table-column label="文件名">
+      <el-table-column label="fileName">
         <template #default="scope">
           <div class="fileName">
             <div class="fileName-title">
@@ -17,8 +17,8 @@
           </div>
         </template>
       </el-table-column>
-      <el-table-column prop="owner" label="拥有者" />
-      <el-table-column prop="createtime" label="日期" />
+      <el-table-column prop="owner" label="owner" />
+      <el-table-column prop="createtime" label="Date" />
       <el-table-column fixed="right" align="right">
         <template #default="scope">
           <div class="opt">
