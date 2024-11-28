@@ -18,7 +18,7 @@ export function createAwareness({ username, doc, provider }) {
   // 定义随机颜色
   let color = "#" + _R.slice(0, 6);
 
-  let userInfo = { name: username || `用户_${_R.slice(0, 3)}`, color };
+  let userInfo = { name: username || `User_${_R.slice(0, 3)}`, color };
 
   awareness.setLocalStateField("user", userInfo);
 
