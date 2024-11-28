@@ -35,7 +35,7 @@
 
     <div class="aside-bottom" @click="router.push('/recycle')">
       <i class="iconfont icon-huishouzhan"></i>
-      <span> bin </span>
+      <span> Recycle Bin </span>
     </div>
   </div>
 </template>
