@@ -41,7 +41,7 @@ let breadcrumblist = reactive([
  *  favor: 收藏
  */
 let pathMap = [
-  { path: "news", title: "最近文档" },
+  
   { path: "share", title: "与我共享" },
 ];
 

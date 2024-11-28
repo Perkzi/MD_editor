@@ -9,7 +9,7 @@
         <div class="login-box-left-tip">
           <ul>
             <li>多人协作在线编辑器-Multi Person Online Editor</li>
-            <li>支持Word、Excel、TXT、Markdown等多文件类型</li>
+            <li>支持Word、TXT、Markdown等多文件类型</li>
             <li>效率高、低成本、时效性、多版本控制</li>
           </ul>
         </div>
