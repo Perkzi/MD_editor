@@ -104,7 +104,7 @@ router.beforeEach((to, from, next) => {
 
   if (to.path !== "/login") {
     if (!user && !local) {
-      ElMessage.error("请先登录");
+      ElMessage.error("Plaese log in");
       // 进行数据转存
       if (to.matched[0]?.path === "/invited/:fileid") {
         // 向 login 添加信息

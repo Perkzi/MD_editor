@@ -4,17 +4,17 @@
     <div class="top-left">
       <el-button type="primary" @click.stop="(e) => showContentMenu(e)">
         <i class="iconfont icon-xinjian"></i>
-        <span>新建</span>
+        <span>create</span>
       </el-button>
 
       <el-button text @click.stop="inputRef.click()">
         <i class="iconfont icon-daoru"></i>
-        <span>导入</span>
+        <span>import</span>
       </el-button>
 
       <el-button text @click="toTemplate">
         <i class="iconfont icon-duqumoban"></i>
-        <span>模板</span>
+        <span>template</span>
       </el-button>
     </div>
     <div class="top-right">

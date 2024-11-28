@@ -2,9 +2,9 @@
   <div>
     <div class="file-menu">
       <el-button-group>
-        <el-button size="small" :disabled="true"> 删除 </el-button>
-        <el-button size="small" :disabled="true"> 分享 </el-button>
-        <el-button size="small" :disabled="true"> 添加到 </el-button>
+        <el-button size="small" :disabled="true"> delete </el-button>
+        <el-button size="small" :disabled="true"> share </el-button>
+        <el-button size="small" :disabled="true"> add to </el-button>
       </el-button-group>
     </div>
     <el-table
@@ -12,7 +12,7 @@
       @selection-change="handleSelectionChange"
     >
       <el-table-column type="selection" width="55" />
-      <el-table-column label="文件名">
+      <el-table-column label="fileName">
         <template #default="scope">
           <div class="fileName">
             <div class="fileName-title">
@@ -28,9 +28,9 @@
           </div>
         </template>
       </el-table-column>
-      <el-table-column prop="owner" label="拥有者" />
-      <el-table-column prop="createtime" label="日期" />
-      <el-table-column fixed="right" label="操作" align="right">
+      <el-table-column prop="owner" label="owner" />
+      <el-table-column prop="createtime" label="Date" />
+      <el-table-column fixed="right" label="Operation" align="right">
         <template #default="scope">
           <div class="opt">
             <!-- 还要处理hover的收藏及复制链接，更多操作等 -->

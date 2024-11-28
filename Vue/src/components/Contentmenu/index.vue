@@ -99,7 +99,7 @@ function contentmenuClick(command) {
     case "word":
       createDialog.type = command;
       createDialog.show = true;
-      createDialog.title = "新建 Word";
+      createDialog.title = "Create Word";
       createDialog.warning = "文件名称不能为空";
       createDialog.placeholder = "请输入文件名称";
       break;
@@ -108,7 +108,7 @@ function contentmenuClick(command) {
     case "excel":
       createDialog.type = command;
       createDialog.show = true;
-      createDialog.title = "新建 Excel";
+      createDialog.title = "Create Excel";
       createDialog.warning = "文件名称不能为空";
       createDialog.placeholder = "请输入文件名称";
       break;
@@ -117,7 +117,7 @@ function contentmenuClick(command) {
     case "txt":
       createDialog.type = command;
       createDialog.show = true;
-      createDialog.title = "新建文本文档";
+      createDialog.title = "Create TXT";
       createDialog.warning = "文件名称不能为空";
       createDialog.placeholder = "请输入文件名称";
 
@@ -127,7 +127,7 @@ function contentmenuClick(command) {
     case "markdown":
       createDialog.type = command;
       createDialog.show = true;
-      createDialog.title = "新建markdown文档";
+      createDialog.title = "Create Markdown";
       createDialog.warning = "文件名称不能为空";
       createDialog.placeholder = "请输入文件名称";
 

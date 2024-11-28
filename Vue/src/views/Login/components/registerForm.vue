@@ -7,7 +7,7 @@
     label-width="0px"
   >
     <el-form-item prop="userid">
-      <el-input placeholder="请输入账号" v-model="registerForm.userid">
+      <el-input placeholder="account" v-model="registerForm.userid">
         <template #prefix>
           <el-icon><User /></el-icon>
         </template>
@@ -16,7 +16,7 @@
 
     <el-form-item prop="password">
       <el-input
-        placeholder="请输入密码"
+        placeholder="password"
         type="password"
         show-password
         v-model="registerForm.password"
@@ -29,7 +29,7 @@
 
     <el-form-item prop="checkpass">
       <el-input
-        placeholder="请输入密码"
+        placeholder="password"
         type="password"
         show-password
         v-model="registerForm.checkpass"
@@ -86,10 +86,10 @@ const checkPassHandle = (rule, value, callback) => {
 };
 
 const rules = reactive({
-  userid: [{ required: true, message: "请输入账号！", trigger: "blur" }],
-  password: [{ required: true, message: "请确认密码！", trigger: "blur" }],
+  userid: [{ required: true, message: "account", trigger: "blur" }],
+  password: [{ required: true, message: "password", trigger: "blur" }],
   checkpass: [
-    { required: true, message: "请输入密码", trigger: "blur" },
+    { required: true, message: "password", trigger: "blur" },
     { validator: checkPassHandle, trigger: "blur" },
   ],
 });

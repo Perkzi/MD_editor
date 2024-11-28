@@ -31,7 +31,7 @@ import { reactive, ref, watch } from "vue";
 // 定义面包屑列表
 let breadcrumblist = reactive([
   {
-    title: "首页",
+    title: "Home",
     path: "/home/pages",
   },
 ]);
@@ -42,7 +42,7 @@ let breadcrumblist = reactive([
  */
 let pathMap = [
   
-  { path: "share", title: "与我共享" },
+  { path: "share", title: "Share with me" },
 ];
 
 let activeMenu = ref("pages");
