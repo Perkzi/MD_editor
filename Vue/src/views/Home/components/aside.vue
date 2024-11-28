@@ -22,14 +22,6 @@
       <span> 首页 </span>
     </div>
 
-    <div
-      class="aside-icon"
-      @click="menuClick('news')"
-      :class="{ active: activeMenu === 'news' }"
-    >
-      <i class="iconfont icon-zuijinchangyong"></i>
-      <span> 最近文档 </span>
-    </div>
 
     <div
       class="aside-icon"

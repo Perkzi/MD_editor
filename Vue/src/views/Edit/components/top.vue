@@ -21,7 +21,7 @@
         <i class="iconfont icon-oko"></i>
         <span>
           上次修改:
-          <span class="newUserName">{{ newUser }}</span>  1分钟前 
+          <span class="newUserName">{{ newUser }}</span>
         </span>
       </div>
     </div>
