@@ -20,7 +20,7 @@
       <div class="header-left-news">
         <i class="iconfont icon-oko"></i>
         <span>
-          上次修改:
+          Latest Revision:
           <span class="newUserName">{{ newUser }}</span>
         </span>
       </div>
@@ -57,7 +57,7 @@
 
       <!-- 分享 -->
       <div class="header-right-shear" title="分享">
-        <el-button type="primary" size="small" @click="share">分享</el-button>
+        <el-button type="primary" size="small" @click="share">Share</el-button>
       </div>
 
       <!-- 我的头像 -->

@@ -14,7 +14,6 @@ export const menuTextList = [
   "审阅",
   "视图",
   "工具",
-  "会员专享",
 ];
 
 export const active1 = [
