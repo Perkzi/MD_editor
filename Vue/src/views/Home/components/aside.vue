@@ -2,10 +2,10 @@
   <div class="aside">
     <div class="aside-logo">
       <i class="iconfont icon-circulation"></i>
-      <span title="多人协作编辑器"> 多人协作编辑器 </span>
+      <span title="Multi Person Online Editor"> Multi Person Online Editor </span>
     </div>
     <div class="aside-search">
-      <el-input placeholder="搜索" v-model="searchKeyWord" clearable>
+      <el-input placeholder="search" v-model="searchKeyWord" clearable>
         <template #prefix>
           <el-icon><Search /></el-icon>
         </template>
@@ -19,7 +19,7 @@
     >
       <!-- 点击时class为"aside-icon active"未点击时为"aside-icon"如果active就变色 -->
       <i class="iconfont icon-shouye-zhihui"></i>
-      <span> 首页 </span>
+      <span> Home </span>
     </div>
 
 
@@ -29,13 +29,13 @@
       :class="{ active: activeMenu === 'share' }"
     >
       <i class="iconfont icon-shujugongxiang"></i>
-      <span> 与我共享 </span>
+      <span> Share with me </span>
     </div>
 
 
     <div class="aside-bottom" @click="router.push('/recycle')">
       <i class="iconfont icon-huishouzhan"></i>
-      <span> 回收站 </span>
+      <span> Recycle Bin </span>
     </div>
   </div>
 </template>

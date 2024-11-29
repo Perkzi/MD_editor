@@ -2,7 +2,7 @@
   <div class="box">
     <el-page-header :icon="ArrowLeft" @back="router.back()">
       <template #content>
-        <span class="text-large font-600 mr-3"> 回收站 </span>
+        <span class="text-large font-600 mr-3"> Recycle Bin </span>
       </template>
       <div class="mt-4 text-sm font-bold box-main">
         <!-- 列表展示回收站的文件 -->

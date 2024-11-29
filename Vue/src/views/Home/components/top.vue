@@ -4,17 +4,17 @@
     <div class="top-left">
       <el-button type="primary" @click.stop="(e) => showContentMenu(e)">
         <i class="iconfont icon-xinjian"></i>
-        <span>新建</span>
+        <span>create</span>
       </el-button>
 
       <el-button text @click.stop="inputRef.click()">
         <i class="iconfont icon-daoru"></i>
-        <span>导入</span>
+        <span>import</span>
       </el-button>
 
       <el-button text @click="toTemplate">
         <i class="iconfont icon-duqumoban"></i>
-        <span>模板</span>
+        <span>template</span>
       </el-button>
     </div>
     <div class="top-right">
@@ -32,17 +32,6 @@
         </dropdown>
       </div>
     </div>
-
-    <!-- 系统设置抽屉 -->
-    <!-- <settings
-      :visible="settingsOption"
-      @drawerClose="settingsOption.show = false"
-    /> -->
-
-    <!-- 右键菜单 -->
-    <!-- 通过  ref  属性，给这个组件一个引用名  contentmenuRef ，这样可以在脚本中通过  this.$refs.contentmenuRef  访问该组件实例 -->
-    <!-- 当 Vue 渲染这个组件时， contentmenuRef  将会被赋值为该组件的实例。  -->
-    <!-- "@component/Contentmenu/index.vue"里emit的create和close -->
     <contentmenu
       v-if="showContentMenuInCurrent"
       ref="contentmenuRef"  
@@ -80,22 +69,17 @@ let userSvg = ref("");
 
 const optList = reactive([
   {
-    name: "个人中心",
+    name: "User Center",
     command: "user",
     icon: "icon-zhanghao",
   },
   {
-    name: "系统设置",
-    command: "setting",
-    icon: "icon-shezhi-xianxing",
-  },
-  {
-    name: "项目地址",
+    name: "Project Url",
     command: "gitee",
     icon: "icon-github-fill",
   },
   {
-    name: "退出系统",
+    name: "Log Out",
     command: "exit",
     icon: "icon-tuichu",
   },

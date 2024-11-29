@@ -8,9 +8,8 @@
         </div>
         <div class="login-box-left-tip">
           <ul>
-            <li>多人协作在线编辑器-Multi Person Online Editor</li>
-            <li>支持Word、TXT、Markdown等多文件类型</li>
-            <li>效率高、低成本、时效性、多版本控制</li>
+            <li>Multi Person Online Editor</li>
+            <li>Support Word、TXT、Markdown</li>
           </ul>
         </div>
       </div>
@@ -33,7 +32,7 @@ import registerForm from "./components/registerForm.vue";
 // 引入主题切换
 const ActiveFormType = ref("login");
 const formType = ref("LoginAnimation");
-const tabLabel = ref("登录");
+const tabLabel = ref("log in");
 
 const toRegister = () => (
   (formType.value = "RegisterAnimation"), (tabLabel.value = "注册")

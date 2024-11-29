@@ -3,7 +3,7 @@
     <!-- 面包屑 -->
     <el-breadcrumb :separator-icon="ArrowRight">
       <el-breadcrumb-item :to="{ path: '/' }">返回</el-breadcrumb-item>
-      <el-breadcrumb-item>个人中心</el-breadcrumb-item>
+      <el-breadcrumb-item>User Center</el-breadcrumb-item>
     </el-breadcrumb>
 
     <div class="user-info">
@@ -12,41 +12,8 @@
       <img src="./avatar.jpg" alt="" v-else />
       <div>
         <p class="username">{{ user.username }}</p>
-        <!-- <p>
-          <img src="./1.png" alt="" />
-          <img src="./2.png" alt="" />
-          <img src="./3.png" alt="" />
-          <span style="background-color: #fc5531">勋</span>
-          <span style="background-color: #ae42fe">章</span>
-          <span style="background-color: #2fb9fe">墙</span>
-        </p>
-        <div class="VIP">
-          <i class="vip-icon"></i
-          ><span>文档超级会员，100+尊享特权-超大空间-海量资源</span>
-        </div> -->
       </div>
     </div>
-
-    <!-- <div class="user-more">
-      <div>
-        <p>账户余额</p>
-        <p>xxx</p>
-        <p>xxx</p>
-        <p>xxx</p>
-      </div>
-      <div>
-        <p>云空间</p>
-        <p>xxx</p>
-        <p>xxx</p>
-        <p>xxx</p>
-      </div>
-      <div>
-        <p>AI文档助手</p>
-        <p>xxx</p>
-        <p>xxx</p>
-        <p>xxx</p>
-      </div>
-    </div> -->
   </div>
 </template>
 

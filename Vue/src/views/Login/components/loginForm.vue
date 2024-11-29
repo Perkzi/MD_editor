@@ -8,7 +8,7 @@
   >
     <el-form-item prop="userid">
       <el-input
-        placeholder="请输入账号"
+        placeholder="account"
         v-model="loginForm.userid"
         :disabled="loginForm.loading"
       >
@@ -20,7 +20,7 @@
 
     <el-form-item prop="password">
       <el-input
-        placeholder="请输入密码"
+        placeholder="password"
         type="password"
         show-password
         v-model="loginForm.password"
@@ -34,7 +34,7 @@
 
     <!-- <el-form-item prop="checkpass">
       <el-input
-        placeholder="请输入密码"
+        placeholder="password"
         type="password"
         show-password
         v-model="loginForm.checkpass"
@@ -48,7 +48,7 @@
 
     <!-- 验证码 -->
     <!-- <el-form-item prop="userid">
-      <el-input placeholder="请输入账号" v-model="loginForm.userid">
+      <el-input placeholder="account" v-model="loginForm.userid">
         <template #prefix>
           <el-icon><User /></el-icon>
         </template>
@@ -62,7 +62,7 @@
         @click="submitForm(loginFormRef)"
         :loading="loginForm.loading"
       >
-        登录
+        Log in
       </el-button>
     </el-form-item>
 
@@ -72,12 +72,12 @@
           <el-checkbox
             v-model="loginForm.remember"
             size="small"
-          />记住账号</span
+          />remember </span
         >
         <span>
-          还没有账号？请
+          No account?
           <el-link type="warning" @click="toRegister(loginFormRef)">
-            前往注册
+            register
           </el-link></span
         >
       </div>
@@ -107,17 +107,17 @@ const loginFormRef = ref(null);
 // 检查密码是否一致
 const checkPassHandle = (rule, value, callback) => {
   if (value !== loginForm.password) {
-    callback(new Error("密码不一致！"));
+    callback(new Error("Password incorrect！"));
   } else {
     callback();
   }
 };
 
 const rules = reactive({
-  userid: [{ required: true, message: "请输入账号！", trigger: "blur" }],
-  password: [{ required: true, message: "请输入密码！", trigger: "blur" }],
+  userid: [{ required: true, message: "account", trigger: "blur" }],
+  password: [{ required: true, message: "password", trigger: "blur" }],
   checkpass: [
-    { required: true, message: "请输入密码", trigger: "blur" },
+    { required: true, message: "password", trigger: "blur" },
     { validator: checkPassHandle, trigger: "blur" },
   ],
 });

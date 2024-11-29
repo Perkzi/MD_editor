@@ -21,7 +21,7 @@ exports.login = async (req, res, next) => {
   const token = await jwt_sign({ userid });
   loginUser.token = token;
 
-  return httpCode(res, 200, "登录成功", loginUser);
+  return httpCode(res, 200, "Successfully log in", loginUser);
 };
 
 exports.register = async (req, res, next) => {
