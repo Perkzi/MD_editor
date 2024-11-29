@@ -22,6 +22,7 @@
   "email": "1982392655@qq.com",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@types/jest": "^29.5.14",
     "@vue/test-utils": "^2.4.6",
     "jest": "^29.7.0"
   }
